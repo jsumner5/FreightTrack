@@ -39,6 +39,7 @@ class LoadsController extends AppController
         ]);
 
         $this->set('load', $load);
+        
     }
 
     /**
@@ -48,7 +49,34 @@ class LoadsController extends AppController
      */
     public function add()
     {
+        $companiesC = new CompaniesController();
         $load = $this->Loads->newEntity();
+
+        $load->Date_Created  = $this->getTimeStamp();
+
+        // set company options
+        $companyOptionsQ = $companiesC->Companies->find('all',[
+         //  'fields' => ['Name', 'Record_ID'],
+             'limit' => 10,
+            'order' => ['Name']
+            ])->select(['Name','Record_ID'])->toList();
+
+             $ops = [];
+            // debug($companyOptionsQ);
+
+            foreach($companyOptionsQ as $options){
+                $item = [ 'Name'=> $options['Name'], 'Record_ID' => $options['Record_ID']];
+                //echo $options['Name'];
+                array_push($ops,$item);
+            }
+
+         //  debug($ops);
+
+
+            $this->set('companyOptions', $ops);
+
+        
+
         if ($this->request->is('post')) {
             $load = $this->Loads->patchEntity($load, $this->request->getData());
             if ($this->Loads->save($load)) {
