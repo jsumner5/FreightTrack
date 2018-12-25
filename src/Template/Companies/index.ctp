@@ -26,7 +26,7 @@
             <?php foreach ($companies as $company): ?>
             <tr>
                 <td><?= h($company->Name) ?></td>
-                <td><?= $this->Number->format($company->MCNumber) ?></td>
+                <td><?= h($company->MCNumber) ?></td>
                 <td><?= h($company->Factorable) ?></td>
                 <td><?= h($company->Phone) ?></td>
                 <td class="actions">

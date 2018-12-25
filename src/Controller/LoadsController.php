@@ -35,10 +35,11 @@ class LoadsController extends AppController
     public function view($id = null)
     {
         $load = $this->Loads->get($id, [
-            'contain' => []
+            'contain' => ['companies']
         ]);
 
         $this->set('load', $load);
+        
     }
 
     /**
@@ -49,6 +50,11 @@ class LoadsController extends AppController
     public function add()
     {
         $load = $this->Loads->newEntity();
+
+        $load->Date_Created  = $this->getTimeStamp();
+
+        $this->setLoadDropdownOptions();
+
         if ($this->request->is('post')) {
             $load = $this->Loads->patchEntity($load, $this->request->getData());
             if ($this->Loads->save($load)) {
@@ -70,11 +76,15 @@ class LoadsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->setLoadDropdownOptions();
+
         $load = $this->Loads->get($id, [
-            'contain' => []
+            'contain' => ['companies']
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $load = $this->Loads->patchEntity($load, $this->request->getData());
+           // debug($load);
             if ($this->Loads->save($load)) {
                 $this->Flash->success(__('The load has been saved.'));
 
@@ -103,5 +113,37 @@ class LoadsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function setLoadDropdownOptions(){
+        $companiesC = new CompaniesController();
+        // set company options
+        $companyOptionsQ = $companiesC->Companies->find('list',[
+        //'fields' => ['Related_Company' => 'Record_ID','Name'],
+        //  'limit' => 10,
+       //'order' => ['Name']
+       ])->toList();
+
+        // set payment method options
+        $paymentMethodOptions = [
+            'Cash' => 'Cash',
+            'Check' => 'Check',
+            'Factor' => 'Factor',
+            'QuickPay' => 'QuickPay',
+        ];
+        //
+        $statusOptions = [
+            'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
+            'Paid' => 'Paid', 'Collections'=> 'Collections'
+        ];
+                $ops = [];
+
+
+
+       $this->set('companyOptions', $companyOptionsQ);
+       $this->set('Related_Company');
+       $this->set('paymentMethodOptions', $paymentMethodOptions);
+       $this->set('dispatcherOptions', ['Devarus Lynch','Aaron Starkey', 'Jerold Sumner']);
+       $this->set('statusOptions', $statusOptions);
     }
 }

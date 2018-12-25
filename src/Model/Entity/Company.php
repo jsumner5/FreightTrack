@@ -58,6 +58,7 @@ class Company extends Entity
         'Last_Modified_By' => true,
         'Loads' => true,
         'Phone' => true,
-        'Record_Owner' => true
+        'Record_Owner' => true,
+        'Record_ID' => true
     ];
 }

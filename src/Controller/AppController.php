@@ -16,6 +16,8 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use Cake\I18n\Time;
+
 
 /**
  * Application Controller
@@ -52,4 +54,32 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
+
+    public function getTimeStamp(){
+
+    // Create from a string datetime.
+    // $time = Time::createFromFormat(
+    //     'Y-m-d H:i:s',
+    //     $datetime,
+    //     'America/New_York'
+    // );
+
+    // Get the current time.
+    $time = Time::now();
+    $time->timezone ='America/New_York';
+
+    return $time;
+    }
+
+    public function getDropDownList(array $objs , string $key, string $value){
+
+            $ops = [];
+
+            foreach($objs as $options){
+                $item = [ $key => $options[$key], $value => $options[$value]];
+                array_push($ops,$item);
+            }
+            return $ops;
+    }
+
 }
