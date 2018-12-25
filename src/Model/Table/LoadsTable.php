@@ -34,6 +34,8 @@ class LoadsTable extends Table
         $this->setTable('loads');
         $this->setDisplayField('Record_ID');
         $this->setPrimaryKey('Record_ID');
+        $this ->belongsTo('companies',['foreignKey'=>'Record_ID']);
+        //$this-> hasOne('companies',['foreignKey' => ''])
     }
 
     /**

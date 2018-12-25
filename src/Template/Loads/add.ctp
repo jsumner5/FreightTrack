@@ -16,14 +16,6 @@
         <legend><?= __('Add Load') ?></legend>
         <?php
                 // dropdown options
-                $statusOptions = [
-                    'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
-                    'Paid' => 'Paid', 'Collections'=> 'Collections'
-                ];
-
-
-
-
             echo $this->Form->control('Company_Name',
             [
                 'type' => 'select',
@@ -39,22 +31,21 @@
             echo $this->Form->control('Load_Number');
             echo $this->Form->control('Driver');
             echo $this->Form->control('Rate');
-            echo $this->Form->control('Payment_Method');
-            echo $this->Form->control('Dispacther');
+            echo $this->Form->control('Payment_Method',[
+                'type'=>'Select',
+                'options'=> $paymentMethodOptions,
+                'default' => 'Factor'
+            ]);
+            echo $this->Form->control('Dispacther',[
+                'type'=> 'select',
+                'options'=>$dispatcherOptions,
+                'default'=>'blank'
+            ]);
             echo $this->Form->control('Date_Created');
             echo $this->Form->control('Pick_Up_Address');
             echo $this->Form->control('Delivery_Address');
             echo $this->Form->control('Comments');
-            echo $this->Form->control('Bill_Of_Lading');
-            echo $this->Form->control('Company_Address_City');
-            echo $this->Form->control('Company_Address_StateRegion');
-            echo $this->Form->control('Company_Address_Street_1');
-            echo $this->Form->control('Company_Date_Created');
-            echo $this->Form->control('Company_MCNumber');
-            echo $this->Form->control('Date_Modified');
-
-            echo $this->Form->control('Last_Modified_By');
-          
+            echo $this->Form->control('Date_Modified');          
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
