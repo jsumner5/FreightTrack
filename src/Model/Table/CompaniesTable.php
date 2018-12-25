@@ -32,9 +32,10 @@ class CompaniesTable extends Table
         parent::initialize($config);
 
         $this->setTable('companies');
-        $this->setDisplayField('Record_ID');
-        $this->setPrimaryKey('Record_ID');
-        $this->hasMany('loads',['foreignKey'=> 'Record_ID']);
+        $this->setDisplayField('Name');
+        $this->setPrimaryKey('Company_ID');
+       // $this->belongsToMany('loads',['foreignKey'=> 'Load_ID']);
+        $this->hasMany('loads',['foreignKey'=> 'Load_ID']);
     }
 
     /**

@@ -32,10 +32,10 @@ class LoadsTable extends Table
         parent::initialize($config);
 
         $this->setTable('loads');
-        $this->setDisplayField('Record_ID');
-        $this->setPrimaryKey('Record_ID');
-        $this ->belongsTo('companies',['foreignKey'=>'Record_ID']);
-        //$this-> hasOne('companies',['foreignKey' => ''])
+        $this->setDisplayField('Load_ID');
+        $this->setPrimaryKey('Load_ID');
+        $this ->belongsTo('companies',['foreignKey'=>'Company_ID']);
+        $this-> hasOne('Copanies',['foreignKey' => 'Company_ID']);
     }
 
     /**

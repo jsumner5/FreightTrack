@@ -43,7 +43,6 @@ class Company extends Entity
         'Name' => true,
         'MCNumber' => true,
         'Factorable' => true,
-        '_of_Loads' => true,
         'Add_Load' => true,
         'Notes' => true,
         'Address' => true,
@@ -59,6 +58,6 @@ class Company extends Entity
         'Loads' => true,
         'Phone' => true,
         'Record_Owner' => true,
-        'Record_ID' => true
+        'Company_ID' => true
     ];
 }

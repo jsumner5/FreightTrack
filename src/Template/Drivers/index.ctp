@@ -21,7 +21,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Date_Created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Date_Modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Record_ID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Driver_ID') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Record_Owner') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Last_Modified_By') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -36,13 +36,13 @@
                 <td><?= h($driver->Email) ?></td>
                 <td><?= h($driver->Date_Created) ?></td>
                 <td><?= h($driver->Date_Modified) ?></td>
-                <td><?= $this->Number->format($driver->Record_ID) ?></td>
+                <td><?= $this->Number->format($driver->Driver_ID) ?></td>
                 <td><?= h($driver->Record_Owner) ?></td>
                 <td><?= h($driver->Last_Modified_By) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $driver->Record_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $driver->Record_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $driver->Record_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $driver->Record_ID)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $driver->Driver_ID]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $driver->Driver_ID]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $driver->Driver_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $driver->Driver_ID)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

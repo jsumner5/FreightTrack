@@ -30,9 +30,9 @@
                 <td><?= h($company->Factorable) ?></td>
                 <td><?= h($company->Phone) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $company->Record_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->Record_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->Record_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $company->Record_ID)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $company->Company_ID]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->Company_ID]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->Company_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $company->Company_ID)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

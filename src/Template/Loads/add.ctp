@@ -16,7 +16,7 @@
         <legend><?= __('Add Load') ?></legend>
         <?php
                 // dropdown options
-            echo $this->Form->control('Company_Name',
+            echo $this->Form->control('Company_ID',
             [
                 'type' => 'select',
                 'options' => $companyOptions

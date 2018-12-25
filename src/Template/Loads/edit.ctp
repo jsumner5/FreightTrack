@@ -9,8 +9,8 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $load->Record_ID],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $load->Record_ID)]
+                ['action' => 'delete', $load->Load_ID],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $load->Load_ID)]
             )
         ?></li>
         <li><?= $this->Html->link(__('List Loads'), ['action' => 'index']) ?></li>
@@ -21,16 +21,11 @@
     <fieldset>
         <legend><?= __('Edit Load Number: '.$load->Load_Number) ?></legend>
         <?php
-                    // dropdown options
-                    // echo $this->Form->select('Company_Name',
-                    // [
-                    //     //'type' => 'select',
-                    //     'options' => $companyOptions
-                    // ]);
+                  
 
-                    echo $this->Form->control('Related_Company',[
+                    echo $this->Form->control('Company_ID',[
                         'type'=>'select',
-                        'options'=>$companyOptions
+                        'options'=>$companies
                         ]);
 
 
