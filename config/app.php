@@ -248,8 +248,8 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => 'apponice.com',
-            'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+            'host' => '160.153.94.36',
+           // 'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
 
             /*
              * CakePHP will use the default DB port based on the driver selected

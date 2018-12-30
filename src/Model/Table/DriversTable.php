@@ -31,7 +31,7 @@ class DriversTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('drivers');
+        $this->setTable('Drivers');
         $this->setDisplayField('Record_ID');
         $this->setPrimaryKey('Record_ID');
     }

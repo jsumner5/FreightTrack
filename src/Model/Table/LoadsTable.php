@@ -31,7 +31,7 @@ class LoadsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('loads');
+        $this->setTable('Loads');
         $this->setDisplayField('LoadNumber');
         $this->setPrimaryKey('LoadID');
         $this ->belongsTo('companies',['foreignKey'=>'CompanyID']);
