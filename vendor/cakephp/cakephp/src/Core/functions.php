@@ -308,7 +308,7 @@ if (!function_exists('deprecationWarning')) {
             );
         }
 
-        trigger_error($message, E_USER_DEPRECATED);
+       // trigger_error($message, E_USER_DEPRECATED);
     }
 }
 
