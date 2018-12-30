@@ -248,7 +248,7 @@ return [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => 'localhost',
+            'host' => 'apponice.com',
             'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
 
             /*
@@ -256,10 +256,10 @@ return [
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
              * the following line and set the port accordingly
              */
-            //'port' => 'non_standard_port_number',
-            'username' => 'appUser',
+            'port' => '3306',
+            'username' => 'AllenBoys',
             'password' => 'Allen123',
-            'database' => 'app',
+            'database' => 'AllenApp',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
@@ -288,29 +288,29 @@ return [
              */
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
-            'url' => env('DATABASE_URL', null),
+           // 'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp"//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
         /**
          * The test connection is used during the test suite.
-         */
-        'test' => [
-            'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Mysql',
-            'persistent' => false,
-            'host' => 'localhost',
-            //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'test_myapp',
-            //'encoding' => 'utf8mb4',
-            'timezone' => 'UTC',
-            'cacheMetadata' => true,
-            'quoteIdentifiers' => false,
-            'log' => false,
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
-            'url' => env('DATABASE_TEST_URL', null),
-        ],
+          */
+        // 'test' => [
+        //     'className' => 'Cake\Database\Connection',
+        //     'driver' => 'Cake\Database\Driver\Mysql',
+        //     'persistent' => false,
+        //     'host' => 'localhost',
+        //     //'port' => 'non_standard_port_number',
+        //     'username' => 'my_app',
+        //     'password' => 'secret',
+        //     'database' => 'test_myapp',
+        //     //'encoding' => 'utf8mb4',
+        //     'timezone' => 'UTC',
+        //     'cacheMetadata' => true,
+        //     'quoteIdentifiers' => false,
+        //     'log' => false,
+        //     //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+        //     'url' => env('DATABASE_TEST_URL', null),
+        // ],
     ],
 
     /**
