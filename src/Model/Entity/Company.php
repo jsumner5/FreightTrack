@@ -43,22 +43,14 @@ class Company extends Entity
         'Name' => true,
         'MCNumber' => true,
         'Factorable' => true,
-        '_of_Loads' => true,
         'Add_Load' => true,
         'Notes' => true,
         'Address' => true,
-        'Address_City' => true,
-        'Address_Country' => true,
-        'Address_Postal_Code' => true,
-        'Address_StateRegion' => true,
-        'Address_Street_1' => true,
-        'Address_Street_2' => true,
-        'Date_Created' => true,
-        'Date_Modified' => true,
-        'Last_Modified_By' => true,
+        'DateCreated' => true,
+        'DateModified' => true,
+        'LastModifiedBy' => true,
         'Loads' => true,
         'Phone' => true,
-        'Record_Owner' => true,
-        'Record_ID' => true
+        'CompanyID' => true
     ];
 }

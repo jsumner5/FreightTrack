@@ -20,7 +20,7 @@ class LoadsController extends AppController
      */
     public function index()
     {
-        $loads = $this->paginate($this->Loads);
+        $loads = $this->paginate($this->Loads,['contain' => 'companies']);
 
         $this->set(compact('loads'));
     }
@@ -51,7 +51,7 @@ class LoadsController extends AppController
     {
         $load = $this->Loads->newEntity();
 
-        $load->Date_Created  = $this->getTimeStamp();
+        //$load->DateCreated  = $this->getTimeStamp();
 
         $this->setLoadDropdownOptions();
 
@@ -84,7 +84,6 @@ class LoadsController extends AppController
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $load = $this->Loads->patchEntity($load, $this->request->getData());
-           // debug($load);
             if ($this->Loads->save($load)) {
                 $this->Flash->success(__('The load has been saved.'));
 
@@ -116,34 +115,25 @@ class LoadsController extends AppController
     }
 
     public function setLoadDropdownOptions(){
-        $companiesC = new CompaniesController();
-        // set company options
-        $companyOptionsQ = $companiesC->Companies->find('list',[
-        //'fields' => ['Related_Company' => 'Record_ID','Name'],
-        //  'limit' => 10,
-       //'order' => ['Name']
-       ])->toList();
 
-        // set payment method options
         $paymentMethodOptions = [
             'Cash' => 'Cash',
             'Check' => 'Check',
             'Factor' => 'Factor',
             'QuickPay' => 'QuickPay',
         ];
-        //
+
         $statusOptions = [
             'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
-            'Paid' => 'Paid', 'Collections'=> 'Collections'
+            'Paid' => 'Paid', 'Collections'=> 'Collections',
+            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped'
         ];
-                $ops = [];
 
+        $companiesC = new CompaniesController();
 
-
-       $this->set('companyOptions', $companyOptionsQ);
-       $this->set('Related_Company');
-       $this->set('paymentMethodOptions', $paymentMethodOptions);
-       $this->set('dispatcherOptions', ['Devarus Lynch','Aaron Starkey', 'Jerold Sumner']);
-       $this->set('statusOptions', $statusOptions);
+        $this->set('companies', $companiesC->Companies->find('list'));
+        $this->set('paymentMethodOptions', $paymentMethodOptions);
+        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner']);
+        $this->set('statusOptions', $statusOptions);
     }
 }

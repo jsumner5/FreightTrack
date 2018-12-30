@@ -20,9 +20,27 @@ class CompaniesController extends AppController
      */
     public function index()
     {
+
+        
+        $keyword = $this->request -> query('keyword');
+        
+        if(! empty($keyword)){
+            $this->paginate = ['conditions' => ['name LIKE ' => '%'.$keyword.'%']];
+        }
+
         $companies = $this->paginate($this->Companies);
 
         $this->set(compact('companies'));
+
+            
+          //  $companies = $this->paginate($this->request)
+            // if ($this->Companies->save($company)) {
+            //     $this->Flash->success(__('The company has been saved.'));
+
+            //     return $this->redirect(['action' => 'index']);
+            // }
+            // $this->Flash->error(__('The company could not be saved. Please, try again.'));
+       // }
     }
 
     /**
@@ -35,7 +53,7 @@ class CompaniesController extends AppController
     public function view($id = null)
     {
         $company = $this->Companies->get($id, [
-            'contain' => ['loads']
+          //  'contain' => ['loads']
         ]);
           //  debug($company);
         $this->set('company', $company);
@@ -50,6 +68,7 @@ class CompaniesController extends AppController
     {
         $company = $this->Companies->newEntity();
         if ($this->request->is('post')) {
+            debug($this->request->data);
             $company = $this->Companies->patchEntity($company, $this->request->getData());
             if ($this->Companies->save($company)) {
                 $this->Flash->success(__('The company has been saved.'));
@@ -59,6 +78,7 @@ class CompaniesController extends AppController
             $this->Flash->error(__('The company could not be saved. Please, try again.'));
         }
         $this->set(compact('company'));
+        $this->setFactorOptions();
     }
 
     /**
@@ -83,6 +103,7 @@ class CompaniesController extends AppController
             $this->Flash->error(__('The company could not be saved. Please, try again.'));
         }
         $this->set(compact('company'));
+        $this ->setFactorOptions();
     }
 
     /**
@@ -103,5 +124,11 @@ class CompaniesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+
+    public function setFactorOptions(){
+        $this->set('factorOptions',['Yes', 'No']);
+
     }
 }

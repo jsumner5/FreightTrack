@@ -15,12 +15,12 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Company_Name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('CompanyName') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Load_Number') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('LoadNumber') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Driver') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Rate') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Payment_Method') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('PaymentMethod') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dispacther') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -28,17 +28,17 @@
         <tbody>
             <?php foreach ($loads as $load): ?>
             <tr>
-                <td><?= h($load->Company_Name) ?></td>
+                <td><?= h($load->company->Name) ?></td>
                 <td><?= h($load->Status) ?></td>
-                <td><?= h($load->Load_Number) ?></td>
+                <td><?= h($load->LoadNumber) ?></td>
                 <td><?= h($load->Driver) ?></td>
                 <td><?= h($load->Rate) ?></td>
-                <td><?= h($load->Payment_Method) ?></td>
+                <td><?= h($load->PaymentMethod) ?></td>
                 <td><?= h($load->Dispacther) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $load->Record_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->Record_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $load->Record_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $load->Record_ID)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $load->LoadID], ['confirm' => __('Are you sure you want to delete # {0}?', $load->LoadID)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

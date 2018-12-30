@@ -16,10 +16,10 @@
         <legend><?= __('Add Load') ?></legend>
         <?php
                 // dropdown options
-            echo $this->Form->control('Company_Name',
+            echo $this->Form->control('CompanyID',
             [
                 'type' => 'select',
-                'options' => $companyOptions
+                'options' => $companies
             ]);
 
             echo $this->Form->control('Status', 
@@ -28,10 +28,10 @@
                  'default' => 'Booked',
                  'label' => 'Load Status']);
 
-            echo $this->Form->control('Load_Number');
+            echo $this->Form->control('LoadNumber');
             echo $this->Form->control('Driver');
             echo $this->Form->control('Rate');
-            echo $this->Form->control('Payment_Method',[
+            echo $this->Form->control('PaymentMethod',[
                 'type'=>'Select',
                 'options'=> $paymentMethodOptions,
                 'default' => 'Factor'
@@ -41,11 +41,9 @@
                 'options'=>$dispatcherOptions,
                 'default'=>'blank'
             ]);
-            echo $this->Form->control('Date_Created');
-            echo $this->Form->control('Pick_Up_Address');
-            echo $this->Form->control('Delivery_Address');
-            echo $this->Form->control('Comments');
-            echo $this->Form->control('Date_Modified');          
+            echo $this->Form->control('PickUpAddress');
+            echo $this->Form->control('DeliveryAddress');
+            echo $this->Form->input('Comments');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

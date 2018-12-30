@@ -12,8 +12,22 @@
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+use Cake\Cache\Cache;
+use Cake\Core\Configure;
+use Cake\Core\Plugin;
+use Cake\Datasource\ConnectionManager;
+use Cake\Error\Debugger;
+use Cake\Http\Exception\NotFoundException;
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$this->layout = false;
+
+if (!Configure::read('debug')) :
+    throw new NotFoundException(
+        'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
+    );
+endif;
+
+$cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,33 +35,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?= $cakeDescription ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
 
+    <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <?= $this->Html->css('home.css') ?>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
-<body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <div class="top-bar-section">
-            <ul class="left">
-                <li><a target="" href="<?php echo $this->request->webroot.'companies'?>">Companies</a></li>
-                <li><a target="" href="<?php echo $this->request->webroot.'loads'?>">loads</a> </li>
+<body class="home">
+<table>
+</td>test</td>
+</table>
 
-            </ul>
-        </div>
-    </nav>
-    <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-    <footer>
-    </footer>
 </body>
 </html>

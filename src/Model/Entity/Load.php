@@ -45,7 +45,6 @@ use Cake\ORM\Entity;
  * @property string|null $Rate_Confirmation
  * @property int $Record_ID
  * @property string $Record_Owner
- * @property int $Related_Company
  */
 class Load extends Entity
 {
@@ -60,44 +59,20 @@ class Load extends Entity
      * @var array
      */
     protected $_accessible = [
-        'Company_Name' => true,
         'Status' => true,
-        'Load_Number' => true,
+        'LoadNumber' => true,
         'Driver' => true,
         'Rate' => true,
-        'Payment_Method' => true,
+        'PaymentMethod' => true,
         'Dispacther' => true,
-        'Date_Created' => true,
-        'Pick_Up_Address' => true,
-        'Delivery_Address' => true,
+        'DateCreated' => true,
+        'PickUpAddress' => true,
+        'DeliveryAddress' => true,
         'Comments' => true,
-        'Bill_Of_Lading' => true,
-        'Company_Address_City' => true,
-        'Company_Address_StateRegion' => true,
-        'Company_Address_Street_1' => true,
-        'Company_Date_Created' => true,
-        'Company_MCNumber' => true,
-        'Date_Modified' => true,
-        'Delivery_Address_City' => true,
-        'Delivery_Address_Country' => true,
-        'Delivery_Address_Postal_Code' => true,
-        'Delivery_Address_StateRegion' => true,
-        'Delivery_Address_Street_1' => true,
-        'Delivery_Address_Street_2' => true,
-        'Destination_City_Name' => true,
-        'Destination_State' => true,
+        'DateModified' => true,
         'GenerateInvoice' => true,
-        'Last_Modified_By' => true,
-        'Pick_Up_Address_City' => true,
-        'Pick_Up_Address_Country' => true,
-        'Pick_Up_Address_Postal_Code' => true,
-        'Pick_Up_Address_StateRegion' => true,
-        'Pick_Up_Address_Street_1' => true,
-        'Pick_Up_Address_Street_2' => true,
-        'Pick_Up_City_Name' => true,
-        'Pick_Up_State' => true,
-        'Rate_Confirmation' => true,
-        'Record_Owner' => true,
-        'Related_Company' => true
+        'LastModifiedBy' => true,
+        'LoadID' => true,
+        'CompanyID' => true
     ];
 }
