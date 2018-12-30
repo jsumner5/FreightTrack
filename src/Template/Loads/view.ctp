@@ -7,14 +7,14 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Load'), ['action' => 'edit', $load->Load_ID]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Load'), ['action' => 'delete', $load->Load_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $load->Load_ID)]) ?> </li>
+        <li><?= $this->Html->link(__('Edit Load'), ['action' => 'edit', $load->LoadID]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Load'), ['action' => 'delete', $load->LoadID], ['confirm' => __('Are you sure you want to delete # {0}?', $load->LoadID)]) ?> </li>
         <li><?= $this->Html->link(__('List Loads'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="loads view large-9 medium-8 columns content">
-    <h3><?= h($load->Load_ID) ?></h3>
+    <h3><?= h($load->LoadID) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Company Name') ?></th>
@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Load Number') ?></th>
-            <td><?= h($load->Load_Number) ?></td>
+            <td><?= h($load->LoadNumber) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Driver') ?></th>
@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Payment Method') ?></th>
-            <td><?= h($load->Payment_Method) ?></td>
+            <td><?= h($load->LoadNumber) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Dispacther') ?></th>
@@ -170,7 +170,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Record ID') ?></th>
-            <td><?= $this->Number->format($load->Load_ID) ?></td>
+            <td><?= $this->Number->format($load->LoadID) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Company_ID') ?></th>

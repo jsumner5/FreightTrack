@@ -51,7 +51,7 @@ class LoadsController extends AppController
     {
         $load = $this->Loads->newEntity();
 
-        $load->Date_Created  = $this->getTimeStamp();
+        //$load->DateCreated  = $this->getTimeStamp();
 
         $this->setLoadDropdownOptions();
 
@@ -125,14 +125,15 @@ class LoadsController extends AppController
 
         $statusOptions = [
             'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
-            'Paid' => 'Paid', 'Collections'=> 'Collections'
+            'Paid' => 'Paid', 'Collections'=> 'Collections',
+            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped'
         ];
 
         $companiesC = new CompaniesController();
 
         $this->set('companies', $companiesC->Companies->find('list'));
         $this->set('paymentMethodOptions', $paymentMethodOptions);
-        $this->set('dispatcherOptions', ['Devarus Lynch','Aaron Starkey', 'Jerold Sumner']);
+        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner']);
         $this->set('statusOptions', $statusOptions);
     }
 }

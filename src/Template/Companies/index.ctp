@@ -7,11 +7,14 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Company'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Add Company'), ['action' => 'add']) ?></li>
+
     </ul>
 </nav>
 <div class="companies index large-9 medium-8 columns content">
     <h3><?= __('Companies') ?></h3>
+    <?= $this -> form -> create('',['type'=>'get']) ?>
+    <?= $this -> form -> control('keyword') ?>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -30,9 +33,10 @@
                 <td><?= h($company->Factorable) ?></td>
                 <td><?= h($company->Phone) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $company->Company_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->Company_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->Company_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $company->Company_ID)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $company->CompanyID]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
+                    <!-- move delete to the edit page -->
+                    <!-- $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->CompanyID], ['confirm' => __('Are you sure you want to delete # {0}?', $company->CompanyID)]) ?> -->
                 </td>
             </tr>
             <?php endforeach; ?>

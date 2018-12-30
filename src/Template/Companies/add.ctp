@@ -17,7 +17,7 @@
         <?php
             echo $this->Form->control('Name');
             echo $this->Form->control('MCNumber');
-            echo $this->Form->control('Factorable');
+            echo $this->Form->control('Factorable',['type' => 'select', 'options' => $factorOptions]);
             echo $this->Form->control('Notes');
             echo $this->Form->control('Address');
             echo $this->Form->control('Phone');

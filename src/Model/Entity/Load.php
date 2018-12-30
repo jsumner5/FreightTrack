@@ -60,22 +60,19 @@ class Load extends Entity
      */
     protected $_accessible = [
         'Status' => true,
-        'Load_Number' => true,
+        'LoadNumber' => true,
         'Driver' => true,
         'Rate' => true,
-        'Payment_Method' => true,
+        'PaymentMethod' => true,
         'Dispacther' => true,
-        'Date_Created' => true,
-        'Pick_Up_Address' => true,
-        'Delivery_Address' => true,
+        'DateCreated' => true,
+        'PickUpAddress' => true,
+        'DeliveryAddress' => true,
         'Comments' => true,
-        'Bill_Of_Lading' => true,
-        'Date_Modified' => true,
+        'DateModified' => true,
         'GenerateInvoice' => true,
-        'Last_Modified_By' => true,
-        'Rate_Confirmation' => true,
-        'Record_Owner' => true,
-        'Load_ID' => true,
-        'Company_ID' => true
+        'LastModifiedBy' => true,
+        'LoadID' => true,
+        'CompanyID' => true
     ];
 }
