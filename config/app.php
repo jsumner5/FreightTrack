@@ -256,7 +256,7 @@ return [
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
              * the following line and set the port accordingly
              */
-            'port' => '3306',
+           // 'port' => '3306',
             'username' => 'AllenBoys',
             'password' => 'Allen123',
             'database' => 'AllenApp',
@@ -288,7 +288,7 @@ return [
              */
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
-           // 'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp"//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
+            'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp"//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
         /**
