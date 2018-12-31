@@ -34,8 +34,8 @@ class LoadsTable extends Table
         $this->setTable('Loads');
         $this->setDisplayField('LoadNumber');
         $this->setPrimaryKey('LoadID');
-        $this ->belongsTo('companies',['foreignKey'=>'CompanyID']);
-        $this-> hasOne('Copanies',['foreignKey' => 'CompanyID']);
+        $this->belongsTo('Companies',['foreignKey'=>'CompanyID']);
+       // $this->hasOne('Companies',['foreignKey' => 'CompanyID']);
     }
 
     /**
@@ -46,68 +46,10 @@ class LoadsTable extends Table
      */
     public function validationDefault(Validator $validator)
     {
-        $validator
-            ->scalar('CompanyName')
-            ->maxLength('CompanyName', 63)
-            ->requirePresence('CompanyName', 'create')
-            ->notEmpty('CompanyName');
+   
 
-        $validator
-            ->scalar('Status')
-            ->maxLength('Status', 10)
-            ->requirePresence('Status', 'create')
-            ->notEmpty('Status');
+ 
 
-        $validator
-            ->scalar('LoadNumber')
-            ->maxLength('LoadNumber', 13)
-            ->requirePresence('LoadNumber', 'create')
-            ->notEmpty('LoadNumber');
-
-        $validator
-            ->scalar('Driver')
-            ->maxLength('Driver', 7)
-            ->requirePresence('Driver', 'create')
-            ->notEmpty('Driver');
-
-        $validator
-            ->scalar('Rate')
-            ->maxLength('Rate', 9)
-            ->requirePresence('Rate', 'create')
-            ->notEmpty('Rate');
-
-        $validator
-            ->scalar('PaymentMethod')
-            ->maxLength('PaymentMethod', 9)
-            ->requirePresence('PaymentMethod', 'create')
-            ->notEmpty('PaymentMethod');
-
-        $validator
-            ->scalar('Dispacther')
-            ->maxLength('Dispacther', 13)
-            ->requirePresence('Dispacther', 'create')
-            ->notEmpty('Dispacther');
-
-
-        $validator
-            ->scalar('PickUpAddress')
-            ->maxLength('PickUpAddress', 62)
-            ->allowEmpty('PickUpAddress');
-
-        $validator
-            ->scalar('DeliveryAddress')
-            ->maxLength('DeliveryAddress', 58)
-            ->allowEmpty('DeliveryAddress');
-
-        $validator
-            ->scalar('Comments')
-            ->maxLength('Comments', 500)
-            ->allowEmpty('Comments');
-
-        $validator
-            ->integer('CompanyID')
-            ->requirePresence('CompanyID', 'create')
-            ->notEmpty('CompanyID');
 
         return $validator;
     }

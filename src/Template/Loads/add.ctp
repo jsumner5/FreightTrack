@@ -19,7 +19,8 @@
             echo $this->Form->control('CompanyID',
             [
                 'type' => 'select',
-                'options' => $companies
+                'options' => $companies,
+                'label' => 'Company'
             ]);
 
             echo $this->Form->control('Status', 

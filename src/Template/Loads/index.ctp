@@ -28,12 +28,12 @@
         <tbody>
             <?php foreach ($loads as $load): ?>
             <tr>
-                <td><?= h($load->company->Name) ?></td>
+                <td><?= h($load->Companies['Name'])?></td>
                 <td><?= h($load->Status) ?></td>
                 <td><?= h($load->LoadNumber) ?></td>
                 <td><?= h($load->Driver) ?></td>
                 <td><?= h($load->Rate) ?></td>
-                <td><?= h($load->PaymentMethod) ?></td>
+                <td><?= h($load->PaymentMethod)?></td>
                 <td><?= h($load->Dispacther) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>
