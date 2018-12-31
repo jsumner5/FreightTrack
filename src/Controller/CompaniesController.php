@@ -22,7 +22,7 @@ class CompaniesController extends AppController
     {
 
         
-        $keyword = $this->request -> query('keyword');
+        $keyword = $this->request->query('keyword');
         
         if(! empty($keyword)){
             $this->paginate = ['conditions' => ['name LIKE ' => '%'.$keyword.'%']];
