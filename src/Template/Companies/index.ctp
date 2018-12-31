@@ -16,7 +16,7 @@
 
     <?php 
     echo $this->Form->control('Keyword');
-
+    echo $this->form->create('',['type'=>'get']);
 
 ?>
 
