@@ -36,15 +36,15 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Date Created') ?></th>
-            <td><?= h($company->Date_Created) ?></td>
+            <td><?= h($company->DateCreated) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date Modified') ?></th>
-            <td><?= h($company->Date_Modified) ?></td>
+            <td><?= h($company->Date_odified) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Last Modified By') ?></th>
-            <td><?= h($company->Last_Modified_By) ?></td>
+            <td><?= h($company->LastModifiedBy) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Phone') ?></th>

@@ -13,8 +13,9 @@
 </nav>
 <div class="companies index large-9 medium-8 columns content">
     <h3><?= __('Companies') ?></h3>
-    <?= $this -> form -> create('',['type'=>'get']) ?>
-    <?= $this -> form -> control('keyword') ?>
+    <?= $this -> form->control('keyword') ?>
+    <?= $this -> form->create('',['type'=>'get']) ?>
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
