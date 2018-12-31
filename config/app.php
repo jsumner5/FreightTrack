@@ -246,7 +246,7 @@ return [
 
     'Datasources' => [
 
-        'default' => [
+        'local' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
@@ -294,7 +294,7 @@ return [
             'url' => env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
-        'prod' => [
+        'default' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
