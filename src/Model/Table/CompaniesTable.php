@@ -34,7 +34,7 @@ class CompaniesTable extends Table
         $this->setTable('Companies');
         $this->setDisplayField('Name');
         $this->setPrimaryKey('CompanyID');
-       // $this->hasMany('Loads',['foreignKey'=> 'LoadID']);
+        $this->hasMany('Loads',['foreignKey'=> 'LoadID']);
        // $this->belongsToMany('Loads',['foreignKey'=> 'LoadID']);
 
     }
