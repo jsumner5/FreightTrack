@@ -15,7 +15,7 @@
     <h3><?= __('Companies') ?></h3>
 
     <?php 
-    echo $this->form->create('',['type'=>'get']);
+    echo $this->form->create('',['type'=>'post']);
     echo $this->Form->control('Keyword');
 ?>
 
