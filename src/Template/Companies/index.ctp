@@ -15,9 +15,8 @@
     <h3><?= __('Companies') ?></h3>
 
     <?php 
-    echo $this->Form->control('Keyword');
     echo $this->form->create('',['type'=>'get']);
-
+    echo $this->Form->control('Keyword');
 ?>
 
     <table cellpadding="0" cellspacing="0">
