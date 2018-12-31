@@ -245,7 +245,8 @@ return [
      */
 
     'Datasources' => [
-        'notdefault' => [
+
+        'dbefault' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
@@ -292,6 +293,7 @@ return [
 
             'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp"//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
+
         'default' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
@@ -337,7 +339,7 @@ return [
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
 
-            'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp"//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
+            'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp",//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
         /**
