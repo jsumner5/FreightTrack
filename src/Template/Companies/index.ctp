@@ -16,7 +16,7 @@
 
     <?php 
     echo $this->Form->create('',['type'=>'get']);
-    echo $this->Form->control('Keyword');
+    echo $this->Form->control('keyword');
 ?>
 
     <table cellpadding="0" cellspacing="0">
