@@ -14,6 +14,12 @@
 <div class="companies index large-9 medium-8 columns content">
     <h3><?= __('Companies') ?></h3>
 
+    <?php 
+    echo $this->Form->control('Keyword');
+
+
+?>
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
