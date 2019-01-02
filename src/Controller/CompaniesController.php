@@ -25,10 +25,15 @@ class CompaniesController extends AppController
         $keyword = $this->request->query('keyword');
         
         if(! empty($keyword)){
-            $this->paginate = ['conditions' => ['name LIKE ' => '%'.$keyword.'%']];
+            $this->paginate = ['conditions' => [
+                'OR' => [
+                    'Name LIKE ' => '%'.$keyword.'%',
+                    'MCNumber Like' => '%'.$keyword.'%'
+                ],
+                ]];
         }
 
-        $companies = $this->paginate($this->Companies);
+        $companies = $this->paginate($this->Companies,  ['sort' => 'DateCreated']);
 
         $this->set(compact('companies'));
 
@@ -67,6 +72,9 @@ class CompaniesController extends AppController
     public function add()
     {
         $company = $this->Companies->newEntity();
+
+        $company->DateCreated  = $this->getTimeStamp();
+
         if ($this->request->is('post')) {
             debug($this->request->data);
             $company = $this->Companies->patchEntity($company, $this->request->getData());
@@ -128,7 +136,7 @@ class CompaniesController extends AppController
 
 
     public function setFactorOptions(){
-        $this->set('factorOptions',['Yes', 'No']);
+        $this->set('factorOptions',['Yes'=> 'Yes', 'No' => 'No']);
 
     }
 }

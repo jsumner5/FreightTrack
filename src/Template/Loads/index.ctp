@@ -12,9 +12,16 @@
 </nav>
 <div class="loads index large-9 medium-8 columns content">
     <h3><?= __('Loads') ?></h3>
+
+    <?php 
+    echo $this->Form->create('',['type'=>'get']);
+    echo $this->Form->control('keyword',['label' => 'Search loads']);
+?>
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
+            <!-- need to sort these by date created  and also populate that on load creation and throw a search on there -->
                 <th scope="col"><?= $this->Paginator->sort('CompanyName') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Status') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('LoadNumber') ?></th>
@@ -22,6 +29,8 @@
                 <th scope="col"><?= $this->Paginator->sort('Rate') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('PaymentMethod') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dispacther') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
+
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -35,6 +44,8 @@
                 <td><?= h($load->Rate) ?></td>
                 <td><?= h($load->PaymentMethod)?></td>
                 <td><?= h($load->Dispacther) ?></td>
+                <td><?= h($load->DateCreated) ?></td>
+
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>

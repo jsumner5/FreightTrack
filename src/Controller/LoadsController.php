@@ -20,7 +20,30 @@ class LoadsController extends AppController
      */
     public function index()
     {
-        $loads = $this->paginate($this->Loads,['contain' => 'companies']);
+        $keyword = $this->request->query('keyword');
+        
+        if(! empty($keyword)){
+            $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
+
+            $this->paginate = ['conditions' => [
+                'OR' => [
+                    'LoadNumber LIKE' => '%'.$keyword.'%',
+                    'Driver LIKE' => '%'.$keyword.'%' ,
+                    'Dispacther LIKE' => '%'.$keyword.'%' ,
+                    'Rate LIKE' => '%'.$keyword.'%' 
+                ]
+              
+                ]
+                        ];
+
+        }
+        
+        $loads = $this->paginate($this->Loads,[
+            'contain' => 'companies',
+            'sort' => 'DateCreated' 
+            ]
+            
+            );
 
         $this->set(compact('loads'));
     }
@@ -51,7 +74,7 @@ class LoadsController extends AppController
     {
         $load = $this->Loads->newEntity();
 
-        //$load->DateCreated  = $this->getTimeStamp();
+        $load->DateCreated  = $this->getTimeStamp();
 
         $this->setLoadDropdownOptions();
 

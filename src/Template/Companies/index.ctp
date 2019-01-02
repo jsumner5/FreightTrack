@@ -25,7 +25,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('MCNumber') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Factorable') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Phone') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -35,7 +35,7 @@
                 <td><?= h($company->Name) ?></td>
                 <td><?= h($company->MCNumber) ?></td>
                 <td><?= h($company->Factorable) ?></td>
-                <td><?= h($company->Phone) ?></td>
+                <td><?= h($company->DateCreated) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $company->CompanyID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
