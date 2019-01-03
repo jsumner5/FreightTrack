@@ -16,7 +16,7 @@
     <?php 
     echo $this->Form->create('',['type'=>'get']);
     echo $this->Form->control('keyword',['label' => 'Search loads']);
-?>
+    ?>
 
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -30,7 +30,6 @@
                 <th scope="col"><?= $this->Paginator->sort('PaymentMethod') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dispacther') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
-
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -45,11 +44,9 @@
                 <td><?= h($load->PaymentMethod)?></td>
                 <td><?= h($load->Dispacther) ?></td>
                 <td><?= h($load->DateCreated) ?></td>
-
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $load->LoadID], ['confirm' => __('Are you sure you want to delete # {0}?', $load->LoadID)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
