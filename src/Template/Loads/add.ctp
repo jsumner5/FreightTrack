@@ -45,8 +45,15 @@
             echo $this->Form->control('PickUpAddress');
             echo $this->Form->control('DeliveryAddress');
             echo $this->Form->input('Comments');
+
+            //echo $this->Form->create($user, ['type' => 'file']); 
+             echo $this->Form->input('username'); 
+             echo $this->Form->input('photo', ['type' => 'file']); 
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
+   
     <?= $this->Form->end() ?>
 </div>
+
+

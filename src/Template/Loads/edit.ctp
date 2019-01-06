@@ -23,7 +23,7 @@
         <?php
                   
 
-                    echo $this->Form->control('Company_ID',[
+                    echo $this->Form->control('CompanyID',[
                         'type'=>'select',
                         'options'=>$companies
                         ]);
@@ -49,9 +49,9 @@
                         'options'=>$dispatcherOptions,
                         'default'=>'blank'
                     ]);
-                    echo $this->Form->control('Date_Created');
-                    echo $this->Form->control('Pick_Up_Address');
-                    echo $this->Form->control('Delivery_Address');
+                    echo $this->Form->control('DateCreated');
+                    echo $this->Form->control('PickUpAddress');
+                    echo $this->Form->control('DeliveryAddress');
                     echo $this->Form->control('Comments');
         ?>
     </fieldset>
