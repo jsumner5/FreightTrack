@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property string $Driver
  * @property string $Rate
  * @property string $Payment_Method
- * @property string $Dispacther
+ * @property string $Dispatcher
  * @property string $Date_Created
  * @property string|null $Pick_Up_Address
  * @property string|null $Delivery_Address
@@ -64,7 +64,7 @@ class Load extends Entity
         'Driver' => true,
         'Rate' => true,
         'PaymentMethod' => true,
-        'Dispacther' => true,
+        'Dispatcher' => true,
         'DateCreated' => true,
         'PickUpAddress' => true,
         'DeliveryAddress' => true,
