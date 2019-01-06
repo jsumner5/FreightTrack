@@ -44,7 +44,7 @@
                         'options'=> $paymentMethodOptions,
                         'default' => 'Factor'
                     ]);
-                    echo $this->Form->control('Dispacther',[
+                    echo $this->Form->control('Dispatcher',[
                         'type'=> 'select',
                         'options'=>$dispatcherOptions,
                         'default'=>'blank'

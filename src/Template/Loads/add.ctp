@@ -33,7 +33,7 @@
             echo $this->Form->control('Driver',[
                 'type' => 'select',
                 'options' => $driverOptions,
-                'default' => 'blank'
+                'default' => 'Select'
             ]);
             echo $this->Form->control('Rate');
             echo $this->Form->control('PaymentMethod',[
@@ -41,10 +41,10 @@
                 'options'=> $paymentMethodOptions,
                 'default' => 'Factor'
             ]);
-            echo $this->Form->control('Dispacther',[
+            echo $this->Form->control('Dispatcher',[
                 'type'=> 'select',
                 'options'=>$dispatcherOptions,
-                'default'=>'blank'
+                'default'=>'Select'
             ]);
             echo $this->Form->control('PickUpAddress');
             echo $this->Form->control('DeliveryAddress');

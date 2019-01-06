@@ -28,7 +28,7 @@
                 <th scope="col"><?= $this->Paginator->sort('Driver') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Rate') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Dispacther') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Dispatcher') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -42,7 +42,7 @@
                 <td><?= h($load->Driver) ?></td>
                 <td><?= h($load->Rate) ?></td>
                 <td><?= h($load->PaymentMethod)?></td>
-                <td><?= h($load->Dispacther) ?></td>
+                <td><?= h($load->Dispatcher) ?></td>
                 <td><?= h($load->DateCreated) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>

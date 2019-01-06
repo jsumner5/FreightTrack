@@ -41,8 +41,8 @@
             <td><?= h($load->LoadNumber) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Dispacther') ?></th>
-            <td><?= h($load->Dispacther) ?></td>
+            <th scope="row"><?= __('Dispatcher') ?></th>
+            <td><?= h($load->Dispatcher) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date Created') ?></th>

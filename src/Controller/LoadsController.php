@@ -149,20 +149,21 @@ class LoadsController extends AppController
         $statusOptions = [
             'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
             'Paid' => 'Paid', 'Collections'=> 'Collections',
-            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped'
+            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped',
         ];
         $driverOptions = [
             'Derrick' => 'Derrick',
             'Justin' => 'Justin',
             'Grant' => 'Grant',
-            'blank' => ''
+            'Select' => 'Select'
         ];
 
         $companiesC = new CompaniesController();
 
         $this->set('companies', $companiesC->Companies->find('list'));
         $this->set('paymentMethodOptions', $paymentMethodOptions);
-        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner']);
+        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select'
+        ]);
         $this->set('statusOptions', $statusOptions);
         $this->set('driverOptions', $driverOptions);
     }
