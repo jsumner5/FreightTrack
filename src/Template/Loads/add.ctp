@@ -30,7 +30,11 @@
                  'label' => 'Load Status']);
 
             echo $this->Form->control('LoadNumber');
-            echo $this->Form->control('Driver');
+            echo $this->Form->control('Driver',[
+                'type' => 'select',
+                'options' => $driverOptions,
+                'default' => 'blank'
+            ]);
             echo $this->Form->control('Rate');
             echo $this->Form->control('PaymentMethod',[
                 'type'=>'Select',
@@ -47,8 +51,9 @@
             echo $this->Form->input('Comments');
 
             //echo $this->Form->create($user, ['type' => 'file']); 
-             echo $this->Form->input('username'); 
-             echo $this->Form->input('photo', ['type' => 'file']); 
+            //  echo $this->Form->input('username'); 
+            //  echo $this->Form->input('photo', ['type' => 'file']); 
+
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

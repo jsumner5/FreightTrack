@@ -151,6 +151,12 @@ class LoadsController extends AppController
             'Paid' => 'Paid', 'Collections'=> 'Collections',
             'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped'
         ];
+        $driverOptions = [
+            'Derrick' => 'Derrick',
+            'Justin' => 'Justin',
+            'Grant' => 'Grant',
+            'blank' => ''
+        ];
 
         $companiesC = new CompaniesController();
 
@@ -158,5 +164,6 @@ class LoadsController extends AppController
         $this->set('paymentMethodOptions', $paymentMethodOptions);
         $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner']);
         $this->set('statusOptions', $statusOptions);
+        $this->set('driverOptions', $driverOptions);
     }
 }

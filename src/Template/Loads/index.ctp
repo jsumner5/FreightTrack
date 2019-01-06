@@ -22,14 +22,14 @@
         <thead>
             <tr>
             <!-- need to sort these by date created  and also populate that on load creation and throw a search on there -->
-                <th scope="col"><?= $this->Paginator->sort('CompanyName') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('CompanyName', ['label'=>'Name']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('LoadNumber') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Driver') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Rate') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('PaymentMethod') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dispacther') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

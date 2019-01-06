@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'FreightTrac: Allen Transport';
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,6 +40,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Companies</a></li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
             </ul>
+            <span style="float:right"> Attach BOLs and Rates coming this week!</span>
         </div>
     </nav>
     <?= $this->Flash->render() ?>
