@@ -38,7 +38,11 @@
                          'label' => 'Load Status']);
         
                     echo $this->Form->control('LoadNumber');
-                    echo $this->Form->control('Driver');
+                    echo $this->Form->control('Driver',[
+                        'type'=>'select',
+                        'options' => $driverOptions,
+                        'defualt' => 'Select'
+                    ]);
                     echo $this->Form->control('Rate');
                     echo $this->Form->control('PaymentMethod',[
                         'type'=>'Select',

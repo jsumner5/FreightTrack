@@ -29,7 +29,7 @@ class LoadsController extends AppController
                 'OR' => [
                     'LoadNumber LIKE' => '%'.$keyword.'%',
                     'Driver LIKE' => '%'.$keyword.'%' ,
-                    'Dispacther LIKE' => '%'.$keyword.'%' ,
+                    'Dispatcher LIKE' => '%'.$keyword.'%' ,
                     'Rate LIKE' => '%'.$keyword.'%' 
                 ]
               
@@ -162,11 +162,12 @@ class LoadsController extends AppController
 
         $companiesC = new CompaniesController();
 
-        $this->set('companies', $companiesC->Companies->find('list'));
+        $this->set('companies', $companiesC->Companies->find('list',['fields'=>['Name','CompanyID'], 'order' => 'Name']));
         $this->set('paymentMethodOptions', $paymentMethodOptions);
         $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select'
         ]);
         $this->set('statusOptions', $statusOptions);
         $this->set('driverOptions', $driverOptions);
     }
+
 }
