@@ -24,6 +24,7 @@
                   
 
                     echo $this->Form->control('CompanyID',[
+                        'label' => 'Company',
                         'type'=>'select',
                         'options'=>$companies
                         ]);
