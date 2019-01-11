@@ -32,8 +32,8 @@ class DriversTable extends Table
         parent::initialize($config);
 
         $this->setTable('Drivers');
-        $this->setDisplayField('Record_ID');
-        $this->setPrimaryKey('Record_ID');
+        $this->setDisplayField('Name');
+        $this->setPrimaryKey('DriverID');
     }
 
     /**
@@ -49,51 +49,7 @@ class DriversTable extends Table
             ->maxLength('First_Name', 7)
             ->requirePresence('First_Name', 'create')
             ->notEmpty('First_Name');
-
-        $validator
-            ->scalar('Last_Name')
-            ->maxLength('Last_Name', 8)
-            ->requirePresence('Last_Name', 'create')
-            ->notEmpty('Last_Name');
-
-        $validator
-            ->scalar('Phone_Number')
-            ->maxLength('Phone_Number', 16)
-            ->allowEmpty('Phone_Number');
-
-        $validator
-            ->scalar('Email')
-            ->maxLength('Email', 28)
-            ->allowEmpty('Email');
-
-        $validator
-            ->scalar('Date_Created')
-            ->maxLength('Date_Created', 19)
-            ->requirePresence('Date_Created', 'create')
-            ->notEmpty('Date_Created');
-
-        $validator
-            ->scalar('Date_Modified')
-            ->maxLength('Date_Modified', 19)
-            ->requirePresence('Date_Modified', 'create')
-            ->notEmpty('Date_Modified');
-
-        $validator
-            ->integer('Record_ID')
-            ->allowEmpty('Record_ID', 'create');
-
-        $validator
-            ->scalar('Record_Owner')
-            ->maxLength('Record_Owner', 33)
-            ->requirePresence('Record_Owner', 'create')
-            ->notEmpty('Record_Owner');
-
-        $validator
-            ->scalar('Last_Modified_By')
-            ->maxLength('Last_Modified_By', 33)
-            ->requirePresence('Last_Modified_By', 'create')
-            ->notEmpty('Last_Modified_By');
-
+            
         return $validator;
     }
 }

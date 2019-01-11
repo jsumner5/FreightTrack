@@ -49,8 +49,8 @@
             echo $this->Form->control('PickUpAddress');
             echo $this->Form->control('DeliveryAddress');
             echo $this->Form->input('Comments');
-            echo $this->Form->input('rate_attachment', ['type' => 'file']);
-            echo $this->Form->input('bol_attachment', ['type' => 'file']);
+            // echo $this->Form->input('rate_attachment', ['type' => 'file']);
+            // echo $this->Form->input('bol_attachment', ['type' => 'file']);
 
 
         ?>

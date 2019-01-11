@@ -9,8 +9,8 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
-   // 'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+   // 'debug' => filter_var(env('DEBUG', false), FILTER_VALIDATE_BOOLEAN),
+    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
 
 
     /**
@@ -248,7 +248,7 @@ return [
 
     'Datasources' => [
 
-        'local'/*'default'*/ => [
+        'default'/*'default'*/ => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
@@ -296,7 +296,7 @@ return [
             'url' => env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
-        'default' => [
+        'remote' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
