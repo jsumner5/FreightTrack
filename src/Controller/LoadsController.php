@@ -155,6 +155,8 @@ class LoadsController extends AppController
             'Derrick' => 'Derrick',
             'Justin' => 'Justin',
             'Grant' => 'Grant',
+            'Mathew' => 'Mathew',
+            'Jan Austin' => 'Jan Austin',
             'Select' => 'Select'
         ];
 
