@@ -11,7 +11,7 @@
     </ul>
 </nav>
 <div class="loads form large-9 medium-8 columns content">
-    <?= $this->Form->create($load) ?>
+    <?= $this->Form->create($load ,['type' => 'file']) ?>
     <fieldset>
         <legend><?= __('Add Load') ?></legend>
         <?php
@@ -49,10 +49,9 @@
             echo $this->Form->control('PickUpAddress');
             echo $this->Form->control('DeliveryAddress');
             echo $this->Form->input('Comments');
+            echo $this->Form->input('rate_attachment', ['type' => 'file']);
+            echo $this->Form->input('bol_attachment', ['type' => 'file']);
 
-            //echo $this->Form->create($user, ['type' => 'file']); 
-            //  echo $this->Form->input('username'); 
-            //  echo $this->Form->input('photo', ['type' => 'file']); 
 
         ?>
     </fieldset>

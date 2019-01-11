@@ -40,7 +40,7 @@ $cakeDescription = 'FreightTrac: Allen Transport';
                 <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Companies</a></li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
             </ul>
-            <span style="float:right"> Attach BOLs and Rates coming this week!</span>
+            <span style="float:right; margin-right:3em;"> Attach BOLs and Rates coming this week!</span>
         </div>
     </nav>
     <?= $this->Flash->render() ?>

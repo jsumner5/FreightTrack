@@ -73,6 +73,10 @@ class Load extends Entity
         'GenerateInvoice' => true,
         'LastModifiedBy' => true,
         'LoadID' => true,
-        'CompanyID' => true
+        'CompanyID' => true ,
+        'bol_attachment' => true,
+        'rate_attachment' => true
     ];
+
+
 }

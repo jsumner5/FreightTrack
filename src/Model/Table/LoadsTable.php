@@ -36,6 +36,29 @@ class LoadsTable extends Table
         $this->setPrimaryKey('LoadID');
         $this->belongsTo('Companies',['foreignKey'=>'CompanyID']);
        // $this->hasOne('Companies',['foreignKey' => 'CompanyID']);
+       $this->addBehavior('Josegonzalez/Upload.Upload', [
+        'rate_attachment' => [
+            'fields' => [
+                // if these fields or their defaults exist
+                // the values will be set.
+                'dir' => 'rate_dir', // defaults to `dir`
+                'size' => 'rate_size', // defaults to `size`
+                'type' => 'rate_type', // defaults to `type`
+            ],
+        ],
+        'bol_attachment' => [
+            'fields' => [
+                // if these fields or their defaults exist
+                // the values will be set.
+                'dir' => 'bol_dir', // defaults to `dir`
+                'size' => 'bol_size', // defaults to `size`
+                'type' => 'bol_type', // defaults to `type`
+            ],
+        ],
+            
+
+        ]);
+
     }
 
     /**

@@ -48,5 +48,6 @@ class Plugin extends BasePlugin
     public function bootstrap(PluginApplicationInterface $app)
     {
         $app->addPlugin('WyriHaximus/TwigView');
+        $app->addPlugin('Josegonzalez/Upload');
     }
 }
