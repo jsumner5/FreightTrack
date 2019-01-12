@@ -248,7 +248,7 @@ return [
 
     'Datasources' => [
 
-        'default'/*'default'*/ => [
+        'ss'/*'default'*/ => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
@@ -296,7 +296,7 @@ return [
             'url' => env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
-        'remote' => [
+        'default' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
