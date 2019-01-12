@@ -40,7 +40,7 @@ class LoadsController extends AppController
         
         $loads = $this->paginate($this->Loads,[
             'contain' => 'companies',
-            'sort' => 'DateCreated' 
+            'order' => ['LoadID desc'] 
             ]
             
             );
