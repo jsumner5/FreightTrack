@@ -496,9 +496,13 @@ div.message.hidden {
         margin-bottom: 0;
         display: none;
     }
-    .hide-mobile {
+    .mobile-hide {
         display: none;
     }
+    .mobile-font-small{
+        font-size: .5em;
+
+        }
 }
 
 .content h3 {
