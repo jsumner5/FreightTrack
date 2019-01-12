@@ -492,9 +492,9 @@ div.message.hidden {
 }
 @media(max-width: 640px) {
     #actions-sidebar {
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         margin-bottom: 0;
-        display: none;
+       /* display: none;*/
     }
     .mobile-hide {
         display: none;
