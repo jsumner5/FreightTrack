@@ -23,9 +23,9 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('MCNumber') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Factorable') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('MCNumber') ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('Factorable') ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('DateCreated') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,11 +33,10 @@
             <?php foreach ($companies as $company): ?>
             <tr>
                 <td><?= h($company->Name) ?></td>
-                <td><?= h($company->MCNumber) ?></td>
-                <td><?= h($company->Factorable) ?></td>
-                <td><?= h($company->DateCreated) ?></td>
+                <td class="hide-mobile"><?= h($company->MCNumber) ?></td>
+                <td class="hide-mobile"><?= h($company->Factorable) ?></td>
+                <td class="hide-mobile"><?= h($company->DateCreated) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $company->CompanyID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
                     <!-- move delete to the edit page -->
                     <!-- $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->CompanyID], ['confirm' => __('Are you sure you want to delete # {0}?', $company->CompanyID)]) ?> -->
@@ -51,7 +50,7 @@
             <?= $this->Paginator->first('<< ' . __('first')) ?>
             <?= $this->Paginator->prev('< ' . __('previous')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
+            <?= $this->Paginator->next(__('next') . ' >') ?>    
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>

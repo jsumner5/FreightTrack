@@ -494,6 +494,10 @@ div.message.hidden {
     #actions-sidebar {
         padding-bottom: 2rem;
         margin-bottom: 0;
+        display: none;
+    }
+    .hide-mobile {
+        display: none;
     }
 }
 

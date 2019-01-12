@@ -22,14 +22,14 @@
         <thead>
             <tr>
             <!-- need to sort these by date created  and also populate that on load creation and throw a search on there -->
-                <th scope="col"><?= $this->Paginator->sort('CompanyName', ['label'=>'Name']) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Status') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('CompanyName', ['label'=>'Name']) ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('Status') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Driver') ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('Driver') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Rate') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Dispatcher') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
+                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -37,15 +37,14 @@
             <?php foreach ($loads as $load): ?>
             <tr>
                 <td><?= h($load->Companies['Name'])?></td>
-                <td><?= h($load->Status) ?></td>
+                <td class="hide-mobile"><?= h($load->Status) ?></td>
                 <td><?= h($load->LoadNumber) ?></td>
-                <td><?= h($load->Driver) ?></td>
+                <td class="hide-mobile"><?= h($load->Driver) ?></td>
                 <td><?= h($load->Rate) ?></td>
-                <td><?= h($load->PaymentMethod)?></td>
+                <td class="hide-mobile"><?= h($load->PaymentMethod)?></td>
                 <td><?= h($load->Dispatcher) ?></td>
-                <td><?= h($load->DateCreated) ?></td>
+                <td class="hide-mobile"><?= h($load->DateCreated) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>
                 </td>
             </tr>
