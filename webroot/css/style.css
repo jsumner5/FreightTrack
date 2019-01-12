@@ -500,9 +500,15 @@ div.message.hidden {
         display: none;
     }
     .mobile-font-small{
-        font-size: .5em;
+        font-size: .7em;
 
         }
+    .content{
+        padding: .1em !important ;
+    }
+    .mobile-width-5{
+        width:5em !important;
+    }
 }
 
 .content h3 {

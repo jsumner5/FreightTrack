@@ -30,7 +30,7 @@
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
-                <th scope="col" class="actions mobile-font-small"><?= __('Actions') ?></th>
+                <th scope="col" class="actions mobile-font-small mobile-width-5"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -44,7 +44,7 @@
                 <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
                 <td class="mobile-hide"><?= h($load->DateCreated) ?></td>
-                <td class="actions mobile-font-small">
+                <td class="actions mobile-font-small mobile-width-5">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>
                 </td>
             </tr>
