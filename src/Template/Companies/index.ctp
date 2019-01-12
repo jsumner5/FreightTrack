@@ -12,31 +12,31 @@
     </ul>
 </nav>
 <div class="companies index large-9 medium-8 columns content">
-    <h3><?= __('Companies') ?></h3>
+    <h3 class="mobile-hide"><?= __('Companies') ?></h3>
 
     <?php 
     echo $this->Form->create('',['type'=>'get']);
-    echo $this->Form->control('keyword');
+    echo $this->Form->control('keyword',['label'=>'Search companies']);
 ?>
 
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
-                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('MCNumber') ?></th>
-                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('Factorable') ?></th>
-                <th scope="col" class="hide-mobile"><?= $this->Paginator->sort('DateCreated') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Name') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('MCNumber') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Factorable') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated') ?></th>
+                <th scope="col" class="actions mobile-width-5 mobile-font-small"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($companies as $company): ?>
             <tr>
-                <td><?= h($company->Name) ?></td>
-                <td class="hide-mobile"><?= h($company->MCNumber) ?></td>
-                <td class="hide-mobile"><?= h($company->Factorable) ?></td>
-                <td class="hide-mobile"><?= h($company->DateCreated) ?></td>
-                <td class="actions">
+                <td class="mobile-font-small"><?= h($company->Name) ?></td>
+                <td class="mobile-hide"><?= h($company->MCNumber) ?></td>
+                <td class="mobile-hide"><?= h($company->Factorable) ?></td>
+                <td class="mobile-hide"><?= h($company->DateCreated) ?></td>
+                <td class="actions mobile-font-small">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
                     <!-- move delete to the edit page -->
                     <!-- $this->Form->postLink(__('Delete'), ['action' => 'delete', $company->CompanyID], ['confirm' => __('Are you sure you want to delete # {0}?', $company->CompanyID)]) ?> -->
