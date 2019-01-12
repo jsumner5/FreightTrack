@@ -505,6 +505,7 @@ div.message.hidden {
         }
     .content{
         padding: .1em !important ;
+        margin-bottom: 0px !important;
     }
     .mobile-width-5{
         width:5em !important;

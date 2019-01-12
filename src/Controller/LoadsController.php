@@ -32,7 +32,6 @@ class LoadsController extends AppController
                     'Dispatcher LIKE' => '%'.$keyword.'%' ,
                     'Rate LIKE' => '%'.$keyword.'%' 
                 ]
-              
                 ]
                         ];
 
@@ -41,7 +40,7 @@ class LoadsController extends AppController
         $loads = $this->paginate($this->Loads,[
             'contain' => 'companies',
             'order' => ['LoadID desc'],
-            'limit' => 50
+            'limit' => 35
             ]
             
             );
