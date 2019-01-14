@@ -149,14 +149,16 @@ class LoadsController extends AppController
         $statusOptions = [
             'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
             'Paid' => 'Paid', 'Collections'=> 'Collections',
-            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped'
+            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped',
+            'Invoiced' => 'Invoiced'
         ];
         $driverOptions = [
             'Derrick' => 'Derrick',
             'Justin' => 'Justin',
             'Grant' => 'Grant',
-            'Mathew' => 'Mathew',
             'Jan Austin' => 'Jan Austin',
+            'Marquez' => 'Marquez',
+            'Independent Dispatched' => 'Independent Dispatch',
             'Select' => 'Select'
         ];
 
