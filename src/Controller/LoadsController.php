@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-
+use Cake\I18n\Time;
 use App\Controller\AppController;
 
 /**
@@ -137,6 +137,36 @@ class LoadsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function report()
+    {
+       // $keyword = $this->request->query('keyword');
+        
+      //  if(! empty($keyword)){
+         //   $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
+
+            $now = Time::now();
+
+            $this->paginate = ['conditions' => [
+                'OR' => [
+                    'Loads.DateCreated >' => $now->subDays(1),
+                ]
+                ]
+                        ];
+
+     //   }
+        
+        $loads = $this->paginate($this->Loads,[
+            'contain' => 'companies',
+            'order' => ['LoadID desc'],
+            'limit' => 35
+            ]
+            
+            );
+
+        $this->set(compact('loads'));
+    }
+
+
     public function setLoadDropdownOptions(){
 
         $paymentMethodOptions = [
@@ -157,6 +187,7 @@ class LoadsController extends AppController
             'Justin' => 'Justin',
             'Grant' => 'Grant',
             'Jan Austin' => 'Jan Austin',
+            'Patrick' => 'Patrick',
             'Marquez' => 'Marquez',
             'Independent Dispatched' => 'Independent Dispatch',
             'Select' => 'Select'
