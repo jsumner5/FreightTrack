@@ -162,7 +162,7 @@ class LoadsController extends AppController
             
             );
 
-       // $this->set(compact('loads'));
+        $this->set(compact('loads'));
      //   $rateSum = $loads->find();
        // $this->set(compact('rateSum', 240));
 
