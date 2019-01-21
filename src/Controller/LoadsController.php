@@ -149,8 +149,7 @@ class LoadsController extends AppController
             $this->paginate = ['conditions' => [
                 'OR' => [
                     'Loads.DateCreated >' => $now->subDays(1),
-                ]
-                ]
+                ]]
                         ];
 
      //   }
@@ -163,7 +162,10 @@ class LoadsController extends AppController
             
             );
 
-        $this->set(compact('loads'));
+       // $this->set(compact('loads'));
+     //   $rateSum = $loads->find();
+       // $this->set(compact('rateSum', 240));
+
     }
 
 

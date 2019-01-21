@@ -8,7 +8,7 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Last 7 days'), ['action' => 'report']) ?></li>
+        <li><?= $this->Html->link(__('Last 24 hours'), ['action' => 'report']) ?></li>
 
     </ul>
 </nav>

@@ -51,6 +51,24 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+    <table>
+        <tbody>
+            <tr>
+               <td style="font-weight:bold">Totals</td>
+               <td></td>
+               <td></td>
+               <td></td>
+
+                <td class="mobile-hide"> coming soon </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+            </tr>
+        </tbody>
+    </table>
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
