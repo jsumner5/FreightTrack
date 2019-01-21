@@ -8,8 +8,6 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Last 7 days'), ['action' => 'report']) ?></li>
-
     </ul>
 </nav>
 <div class="loads index large-9 medium-8 columns content">

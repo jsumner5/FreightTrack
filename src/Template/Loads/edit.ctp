@@ -54,7 +54,6 @@
                         'options'=>$dispatcherOptions,
                         'default'=>'blank'
                     ]);
-                    echo $this->Form->control('DateCreated');
                     echo $this->Form->control('PickUpAddress');
                     echo $this->Form->control('DeliveryAddress');
                     echo $this->Form->control('Comments');
