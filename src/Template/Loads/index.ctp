@@ -42,7 +42,7 @@
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
                 <td class="mobile-hide"><?= h($load->Driver) ?></td>
-                <td class="mobile-font-small"><?= h($load->Rate) ?></td>
+                <td class="mobile-font-small"><?= '$'.h($load->Rate) ?></td>
                 <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
                 <td class="mobile-hide"><?= h($load->DateCreated) ?></td>

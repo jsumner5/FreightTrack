@@ -144,7 +144,7 @@ class LoadsController extends AppController
       //  if(! empty($keyword)){
          //   $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
 
-            $now = Time::now();
+            $now = Time::now();//$this->$this->getTimeStamp();
 
             $this->paginate = ['conditions' => [
                 'OR' => [
