@@ -145,7 +145,7 @@ class LoadsController extends AppController
 
             $this->paginate = ['conditions' => [
                 'OR' => [
-                    'Loads.DateCreated >' => $now->subDays(1),
+                    'Loads.DateCreated >=' => $now->subDays(1),
                 ]]
                         ];
 
