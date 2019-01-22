@@ -11,7 +11,7 @@
     </ul>
 </nav>
 <div class="loads form large-9 medium-8 columns content">
-    <?= $this->Form->create($load) ?>
+    <?= $this->Form->create($load ,['type' => 'file']) ?>
     <fieldset>
         <legend><?= __('Add Load') ?></legend>
         <?php
@@ -19,7 +19,8 @@
             echo $this->Form->control('CompanyID',
             [
                 'type' => 'select',
-                'options' => $companies
+                'options' => $companies,
+                'label' => 'Company'
             ]);
 
             echo $this->Form->control('Status', 
@@ -29,23 +30,34 @@
                  'label' => 'Load Status']);
 
             echo $this->Form->control('LoadNumber');
-            echo $this->Form->control('Driver');
+            echo $this->Form->control('Driver',[
+                'type' => 'select',
+                'options' => $driverOptions,
+                'default' => 'Select'
+            ]);
             echo $this->Form->control('Rate');
             echo $this->Form->control('PaymentMethod',[
                 'type'=>'Select',
                 'options'=> $paymentMethodOptions,
                 'default' => 'Factor'
             ]);
-            echo $this->Form->control('Dispacther',[
+            echo $this->Form->control('Dispatcher',[
                 'type'=> 'select',
                 'options'=>$dispatcherOptions,
-                'default'=>'blank'
+                'default'=>'Select'
             ]);
             echo $this->Form->control('PickUpAddress');
             echo $this->Form->control('DeliveryAddress');
             echo $this->Form->input('Comments');
+            // echo $this->Form->input('rate_attachment', ['type' => 'file']);
+            // echo $this->Form->input('bol_attachment', ['type' => 'file']);
+
+
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
+   
     <?= $this->Form->end() ?>
 </div>
+
+

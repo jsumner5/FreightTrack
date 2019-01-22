@@ -8,37 +8,46 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Last 24 hours'), ['action' => 'report']) ?></li>
+
     </ul>
 </nav>
 <div class="loads index large-9 medium-8 columns content">
-    <h3><?= __('Loads') ?></h3>
+    <h3 class="mobile-hide"><?= __('Loads') ?></h3>
+
+    <?php 
+    echo $this->Form->create('',['type'=>'get']);
+    echo $this->Form->control('keyword',['label' => 'Search loads']);
+    ?>
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('CompanyName') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Status') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('LoadNumber') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Driver') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Rate') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('PaymentMethod') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Dispacther') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            <!-- need to sort these by date created  and also populate that on load creation and throw a search on there -->
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Status') ?></th>
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Driver') ?></th>
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
+                <th scope="col" class="actions mobile-font-small mobile-width-5"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($loads as $load): ?>
             <tr>
-                <td><?= h($load->company->Name) ?></td>
-                <td><?= h($load->Status) ?></td>
-                <td><?= h($load->LoadNumber) ?></td>
-                <td><?= h($load->Driver) ?></td>
-                <td><?= h($load->Rate) ?></td>
-                <td><?= h($load->PaymentMethod) ?></td>
-                <td><?= h($load->Dispacther) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $load->LoadID]) ?>
+                <td class="mobile-font-small"><?= h($load->Companies['Name'])?></td>
+                <td class="mobile-hide"><?= h($load->Status) ?></td>
+                <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
+                <td class="mobile-hide"><?= h($load->Driver) ?></td>
+                <td class="mobile-font-small"><?= '$'.h($load->Rate) ?></td>
+                <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
+                <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
+                <td class="mobile-hide"><?= h($load->DateCreated) ?></td>
+                <td class="actions mobile-font-small mobile-width-5">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $load->LoadID], ['confirm' => __('Are you sure you want to delete # {0}?', $load->LoadID)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

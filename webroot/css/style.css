@@ -492,8 +492,23 @@ div.message.hidden {
 }
 @media(max-width: 640px) {
     #actions-sidebar {
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         margin-bottom: 0;
+       /* display: none;*/
+    }
+    .mobile-hide {
+        display: none;
+    }
+    .mobile-font-small{
+        font-size: .7em;
+
+        }
+    .content{
+        padding: .1em !important ;
+        margin-bottom: 0px !important;
+    }
+    .mobile-width-5{
+        width:5em !important;
     }
 }
 

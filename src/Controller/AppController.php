@@ -55,24 +55,24 @@ class AppController extends Controller
         //$this->loadComponent('Security');
     }
 
-    public function getBaseURL(){
-        $env = 'dev';//'prod';
-
-        if($env == 'dev'){
-            return 'http://localhost:8888/app/';
-        }else{
-            return '';
-        }
-
-    }
-
     public function getTimeStamp(){
 
     // Get the current time.
     $time = Time::now();
+    echo($time);
     $time->timezone ='America/New_York';
-
-    return $time;
+      //  debug(date('Y-m-d',strtotime($time)));
+    return date('Y-m-d',strtotime($time));
     }
+    public function getTimeStampString(){
+
+        // Get the current time.
+        $time = Time::now();
+        echo($time);
+        $time->timezone ='America/New_York';
+        $time = date('Y-m-d',strtotime($time));
+        return date_format($time,'Y-m-d');
+
+        }
 
 }

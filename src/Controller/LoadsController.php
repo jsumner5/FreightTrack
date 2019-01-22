@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-
+use Cake\I18n\Time;
 use App\Controller\AppController;
 
 /**
@@ -20,7 +20,31 @@ class LoadsController extends AppController
      */
     public function index()
     {
-        $loads = $this->paginate($this->Loads,['contain' => 'companies']);
+        $keyword = $this->request->query('keyword');
+        
+        if(! empty($keyword)){
+            $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
+
+            $this->paginate = ['conditions' => [
+                'OR' => [
+                    'LoadNumber LIKE' => '%'.$keyword.'%',
+                    'Driver LIKE' => '%'.$keyword.'%' ,
+                    'Dispatcher LIKE' => '%'.$keyword.'%' ,
+                    'Rate LIKE' => '%'.$keyword.'%' ,
+                    'Companies.Name LIKE' => '%'.$keyword.'%'
+                ]
+                ]
+                        ];
+
+        }
+        
+        $loads = $this->paginate($this->Loads,[
+            'contain' => 'companies',
+            'order' => ['LoadID desc'],
+            'limit' => 35
+            ]
+            
+            );
 
         $this->set(compact('loads'));
     }
@@ -51,7 +75,7 @@ class LoadsController extends AppController
     {
         $load = $this->Loads->newEntity();
 
-        //$load->DateCreated  = $this->getTimeStamp();
+        $load->DateCreated  = $this->getTimeStamp();
 
         $this->setLoadDropdownOptions();
 
@@ -114,6 +138,33 @@ class LoadsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    public function report()
+    {
+
+            $now = Time::now();
+
+            $this->paginate = ['conditions' => [
+                'OR' => [
+                    'Loads.DateCreated >=' => $now->subDays(1),
+                ]]
+                        ];
+
+        
+        $loads = $this->paginate($this->Loads,[
+            'contain' => 'companies',
+            'order' => ['LoadID desc'],
+            'limit' => 35
+            ]
+            
+            );
+
+        $this->set(compact('loads'));
+     //   $rateSum = $loads->find();
+       // $this->set(compact('rateSum', 240));
+
+    }
+
+
     public function setLoadDropdownOptions(){
 
         $paymentMethodOptions = [
@@ -126,14 +177,28 @@ class LoadsController extends AppController
         $statusOptions = [
             'Booked' => 'Booked', 'Invoiced' => 'Invoiced', 
             'Paid' => 'Paid', 'Collections'=> 'Collections',
-            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped'
+            'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped',
+            'Invoiced' => 'Invoiced'
+        ];
+        $driverOptions = [
+            'Derrick' => 'Derrick',
+            'Justin' => 'Justin',
+            'Grant' => 'Grant',
+            'Jan Austin' => 'Jan Austin',
+            'Patrick' => 'Patrick',
+            'Marquez' => 'Marquez',
+            'Independent Dispatched' => 'Independent Dispatch',
+            'Select' => 'Select'
         ];
 
         $companiesC = new CompaniesController();
 
-        $this->set('companies', $companiesC->Companies->find('list'));
+        $this->set('companies', $companiesC->Companies->find('list',['fields'=>['Name','CompanyID'], 'order' => 'Name']));
         $this->set('paymentMethodOptions', $paymentMethodOptions);
-        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner']);
+        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select'
+        ]);
         $this->set('statusOptions', $statusOptions);
+        $this->set('driverOptions', $driverOptions);
     }
+
 }

@@ -31,11 +31,11 @@ class CompaniesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('companies');
+        $this->setTable('Companies');
         $this->setDisplayField('Name');
         $this->setPrimaryKey('CompanyID');
-       // $this->belongsToMany('loads',['foreignKey'=> 'Load_ID']);
-        $this->hasMany('loads',['foreignKey'=> 'LoadID']);
+        $this->hasMany('Loads',['foreignKey'=> 'LoadID']);
+
     }
 
     /**
@@ -72,11 +72,11 @@ class CompaniesTable extends Table
             ->maxLength('Address', 68)
             ->allowEmpty('Address');
 
-
         $validator
             ->scalar('Phone')
             ->maxLength('Phone', 11)
             ->allowEmpty('Phone');
+
 
         return $validator;
     }
