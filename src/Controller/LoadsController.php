@@ -30,7 +30,8 @@ class LoadsController extends AppController
                     'LoadNumber LIKE' => '%'.$keyword.'%',
                     'Driver LIKE' => '%'.$keyword.'%' ,
                     'Dispatcher LIKE' => '%'.$keyword.'%' ,
-                    'Rate LIKE' => '%'.$keyword.'%' 
+                    'Rate LIKE' => '%'.$keyword.'%' ,
+                    'Companies.Name LIKE' => '%'.$keyword.'%'
                 ]
                 ]
                         ];
@@ -139,12 +140,8 @@ class LoadsController extends AppController
 
     public function report()
     {
-       // $keyword = $this->request->query('keyword');
-        
-      //  if(! empty($keyword)){
-         //   $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
 
-            $now = Time::now();//$this->$this->getTimeStamp();
+            $now = Time::now();
 
             $this->paginate = ['conditions' => [
                 'OR' => [
@@ -152,7 +149,6 @@ class LoadsController extends AppController
                 ]]
                         ];
 
-     //   }
         
         $loads = $this->paginate($this->Loads,[
             'contain' => 'companies',
