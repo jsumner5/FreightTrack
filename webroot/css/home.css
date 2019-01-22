@@ -9,6 +9,15 @@
     font-weight: normal;
     font-style: normal;
 }
+/* my color pallet
+#FFFFFF
+#96ADC8 pebble blue
+#8BB8A8 army lyme
+#C57B57 soft burnt orange
+#EBEBD3 desert tan
+
+*/
+
 
 .home {
     font-family: 'Roboto', sans-serif;
@@ -18,7 +27,7 @@
 }
 
 a {
-    color: #0071BC;
+    color: #C57B57;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -27,7 +36,7 @@ a {
 }
 
 a:hover, a:active {
-    color: #d33d44;
+    color: #C57B57;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     -ms-transition: all 0.2s;
@@ -92,7 +101,7 @@ h3, h4 {
 
 .more {
     color: #ffffff;
-    background-color: #d33d44;
+    background-color: #C57B57;
     padding: 15px;
     margin-top: 10px;
 }
@@ -107,7 +116,7 @@ h3, h4 {
     text-align: center;
     display: block;
     padding: 12px;
-    border-bottom: 2px solid #ffcf06;
+    border-bottom: 2px solid #8BB8A8;
 }
 
 .alert {
@@ -115,7 +124,7 @@ h3, h4 {
     font-size: 12px;
     display: block;
     padding: 12px;
-    border-bottom: 2px solid #ffcf06;
+    border-bottom: 2px solid #8BB8A8;
     margin-bottom: 30px;
     color: #404041;
 }
@@ -127,7 +136,7 @@ h3, h4 {
 }
 
 .alert p:before {
-    color: #ffcf06;
+    color: #8BB8A8;
     content: "\0055";
     font-family: 'cakefont', sans-serif;
     font-size: 21px;
@@ -185,7 +194,7 @@ ul li ul, ul li ul li {
 }
 
 .problem:before {
-    color: #d33d44;
+    color: #C57B57;
     content: "\0057";
 }
 
