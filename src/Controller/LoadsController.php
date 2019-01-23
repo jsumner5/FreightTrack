@@ -138,16 +138,11 @@ class LoadsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
-    public function report()
+    public function report(string $report)
     {
 
-            $now = Time::now();
-
-            $this->paginate = ['conditions' => [
-                'OR' => [
-                    'Loads.DateCreated >=' => $now->subDays(1),
-                ]]
-                        ];
+            $this->paginate = $this->getReport($report);
+            
 
         
         $loads = $this->paginate($this->Loads,[
@@ -155,13 +150,48 @@ class LoadsController extends AppController
             'order' => ['LoadID desc'],
             'limit' => 35
             ]
-            
             );
 
         $this->set(compact('loads'));
      //   $rateSum = $loads->find();
        // $this->set(compact('rateSum', 240));
 
+    }
+
+    public function getReport(string $reportName){
+        $now = Time::now();
+
+        switch (strtolower($reportName)) {
+
+            case 'lastday':
+            return ['conditions' => [
+                    'OR' => [
+                        'Loads.DateCreated >=' => $now->subDays(1),
+                    ]]];
+                break;
+
+            case 'lastweek':
+                  return ['conditions' => [
+                    'OR' => [
+                        'Loads.DateCreated >=' => $now->subDays(7),
+                    ]]];
+                break;
+
+            case 'lastmonth':
+                return ['conditions' => [
+                    'OR' => [
+                        'Loads.DateCreated >=' => $now->subDays(30),
+                    ]]];
+                break;
+              
+            case 'notpaid':
+                return ['conditions' => [
+                    'OR' => [
+                        'Loads.Status !=' => 'Paid',
+                    ]]];
+                break;
+                
+        }
     }
 
 

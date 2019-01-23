@@ -7,8 +7,16 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Last 24 hours'), ['action' => 'report']) ?></li>
+        <li><?= $this->Html->link(__('Add Load'), ['action' => 'add']) ?></li>
+        <li class="heading"><?= __('Reports') ?></li>
+        <li><?= $this->Html->link(__('Last Day'), ['action' => 'report','lastDay']) ?></li>
+        <li><?= $this->Html->link(__('Last Week'), ['action' => 'report','lastWeek']) ?></li>
+        <li><?= $this->Html->link(__('Last Month'), ['action' => 'report','lastMonth']) ?></li>
+        <li><?= $this->Html->link(__('Not Paid'), ['action' => 'report','notPaid']) ?></li>
+
+
+
+
 
     </ul>
 </nav>
