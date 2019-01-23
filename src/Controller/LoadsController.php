@@ -153,8 +153,11 @@ class LoadsController extends AppController
             );
 
         $this->set(compact('loads'));
-     //   $rateSum = $loads->find();
-       // $this->set(compact('rateSum', 240));
+        $rateSum = 0;
+        foreach($loads as $item){
+            $rateSum = $rateSum + $item->Rate;
+        }
+        $this->set(compact('rateSum', $rateSum));
 
     }
 

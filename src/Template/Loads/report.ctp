@@ -59,7 +59,7 @@
                <td></td>
                <td></td>
 
-                <td class="mobile-hide"> coming soon </td>
+                <td class="mobile-hide"> <?= $rateSum ?> </td>
                 <td></td>
                 <td></td>
                 <td></td>
