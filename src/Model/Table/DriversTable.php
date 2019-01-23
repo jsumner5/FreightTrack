@@ -34,6 +34,16 @@ class DriversTable extends Table
         $this->setTable('Drivers');
         $this->setDisplayField('Name');
         $this->setPrimaryKey('DriverID');
+
+        $this->addBehavior('Timestamp', [
+            'events' => [
+                'Model.beforeSave' => [
+                    'DateCreated' => 'new',
+                    'DateModified' => 'always',
+                ],
+            ]
+        ]);
+
     }
 
     /**
@@ -45,10 +55,10 @@ class DriversTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->scalar('First_Name')
-            ->maxLength('First_Name', 7)
-            ->requirePresence('First_Name', 'create')
-            ->notEmpty('First_Name');
+            ->scalar('FirstName')
+            ->maxLength('FirstName', 20)
+            ->requirePresence('FirstName', 'create')
+            ->notEmpty('FirstName');
             
         return $validator;
     }

@@ -39,6 +39,7 @@ $cakeDescription = 'FreightTrac: Allen Transport';
             <ul class="left">
                 <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Companies</a></li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
+                <li><a target="" href="<?php echo $this->request->webroot.'Drivers'?>">Drivers</a> </li>
             </ul>
         </div>
     </nav>

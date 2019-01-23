@@ -36,6 +36,15 @@ class CompaniesTable extends Table
         $this->setPrimaryKey('CompanyID');
         $this->hasMany('Loads',['foreignKey'=> 'LoadID']);
 
+        $this->addBehavior('Timestamp', [
+            'events' => [
+                'Model.beforeSave' => [
+                    'DateCreated' => 'new',
+                    'DateModified' => 'always',
+                ],
+            ]
+        ]);
+
     }
 
     /**

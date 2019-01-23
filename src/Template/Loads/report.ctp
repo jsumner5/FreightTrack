@@ -11,7 +11,7 @@
     </ul>
 </nav>
 <div class="loads index large-9 medium-8 columns content">
-    <h3 class="mobile-hide"><?= __('Loads') ?></h3>
+    <h3 class="mobile-hide"><?= __('Loads ('.$reportName.')') ?></h3>
 
     <?php 
     // echo $this->Form->create('',['type'=>'get']);
@@ -37,10 +37,13 @@
             <?php foreach ($loads as $load): ?>
             <tr>
                 <td class="mobile-font-small"><?= h($load->Companies['Name'])?></td>
+
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
+
                 <td class="mobile-hide"><?= h($load->Driver) ?></td>
                 <td class="mobile-font-small"><?= h($this->Number->currency($load->Rate, 'USD')) ?></td>
+
                 <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
                 <td class="mobile-hide"><?= h($load->DateCreated) ?></td>
@@ -54,15 +57,17 @@
     <table>
         <tbody>
             <tr>
-               <td style="font-weight:bold">Totals</td>
-               <td></td>
-               <td></td>
-               <td></td>
-                <td class="mobile-hide" style='font-weight:bold;'> <?= $this->Number->currency($rateSum, 'USD'); ?> </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+               <td class="mobile-font-small" style="font-weight:bold">Totals</td>
+
+               <td class="mobile-hide"></td>
+               <td class=""></td>
+               <td class="mobile-hide"></td>
+                <td class="mobile-font-small" style='font-weight:bold;'> <?= $this->Number->currency($rateSum, 'USD'); ?> </td>
+
+                <td class="mobile-hide"></td>
+                <td class="mobile-hide"></td>
+                <td class="mobile-hide"></td>
+                <td class="actions mobile-font-small mobile-width-5"></td>
 
 
             </tr>

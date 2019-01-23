@@ -141,10 +141,8 @@ class LoadsController extends AppController
     public function report(string $report)
     {
 
-            $this->paginate = $this->getReport($report);
-            
+        $this->paginate = $this->getReport($report);
 
-        
         $loads = $this->paginate($this->Loads,[
             'contain' => 'companies',
             'order' => ['LoadID desc'],
@@ -167,6 +165,7 @@ class LoadsController extends AppController
         switch (strtolower($reportName)) {
 
             case 'lastday':
+            $this->set('reportName', 'Last  Day');
             return ['conditions' => [
                     'OR' => [
                         'Loads.DateCreated >=' => $now->subDays(1),
@@ -174,6 +173,8 @@ class LoadsController extends AppController
                 break;
 
             case 'lastweek':
+            $this->set('reportName', 'Last  Week');
+
                   return ['conditions' => [
                     'OR' => [
                         'Loads.DateCreated >=' => $now->subDays(7),
@@ -181,6 +182,8 @@ class LoadsController extends AppController
                 break;
 
             case 'lastmonth':
+            $this->set('reportName', 'Last  Month');
+
                 return ['conditions' => [
                     'OR' => [
                         'Loads.DateCreated >=' => $now->subDays(30),
@@ -188,6 +191,8 @@ class LoadsController extends AppController
                 break;
               
             case 'notpaid':
+            $this->set('reportName', 'Not Paid');
+
                 return ['conditions' => [
                     'OR' => [
                         'Loads.Status !=' => 'Paid',

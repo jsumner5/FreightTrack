@@ -15,14 +15,10 @@
     <fieldset>
         <legend><?= __('Add Driver') ?></legend>
         <?php
-            echo $this->Form->control('First_Name');
-            echo $this->Form->control('Last_Name');
-            echo $this->Form->control('Phone_Number');
+            echo $this->Form->control('FirstName');
+            echo $this->Form->control('LastName');
+            echo $this->Form->control('PhoneNumber');
             echo $this->Form->control('Email');
-            echo $this->Form->control('Date_Created');
-            echo $this->Form->control('Date_Modified');
-            echo $this->Form->control('Record_Owner');
-            echo $this->Form->control('Last_Modified_By');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

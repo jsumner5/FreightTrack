@@ -15,34 +15,27 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('First_Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Last_Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Phone_Number') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('FirstName') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('LastName') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('PhoneNumber') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Date_Created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Date_Modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Driver_ID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Record_Owner') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Last_Modified_By') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
+
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($drivers as $driver): ?>
             <tr>
-                <td><?= h($driver->First_Name) ?></td>
-                <td><?= h($driver->Last_Name) ?></td>
-                <td><?= h($driver->Phone_Number) ?></td>
+                <td><?= h($driver->FirstName) ?></td>
+                <td><?= h($driver->LastName) ?></td>
+                <td><?= h($driver->PhoneNumber) ?></td>
                 <td><?= h($driver->Email) ?></td>
-                <td><?= h($driver->Date_Created) ?></td>
-                <td><?= h($driver->Date_Modified) ?></td>
-                <td><?= $this->Number->format($driver->Driver_ID) ?></td>
-                <td><?= h($driver->Record_Owner) ?></td>
-                <td><?= h($driver->Last_Modified_By) ?></td>
+                <td><?= h($driver->DateCreated) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $driver->Driver_ID]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $driver->Driver_ID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $driver->Driver_ID], ['confirm' => __('Are you sure you want to delete # {0}?', $driver->Driver_ID)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $driver->DriverID]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $driver->DriverID]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $driver->DriverID], ['confirm' => __('Are you sure you want to delete # {0}?', $driver->DriverID)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

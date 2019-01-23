@@ -29,13 +29,11 @@ class Driver extends Entity
      * @var array
      */
     protected $_accessible = [
-        'First_Name' => true,
-        'Last_Name' => true,
-        'Phone_Number' => true,
+        'FirstName' => true,
+        'LastName' => true,
+        'PhoneNumber' => true,
         'Email' => true,
-        'Date_Created' => true,
-        'Date_Modified' => true,
-        'Record_Owner' => true,
-        'Last_Modified_By' => true
+        'DateCreated' => true,
+        'DateModified' => true,
     ];
 }
