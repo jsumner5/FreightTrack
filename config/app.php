@@ -248,7 +248,7 @@ return [
 
     'Datasources' => [
 
-        'defdsddault' => [
+        'defakkult' => [
             'className' => 'Cake\Database\Connection',
             'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
@@ -263,7 +263,7 @@ return [
            // 'port' => '3306',
             'username' => 'appUser',
             'password' => 'Allen123',
-            'database' => 'AllenApp',
+            'database' => 'FT',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
@@ -309,9 +309,9 @@ return [
              * the following line and set the port accordingly
              */
            // 'port' => '3306',
-            'username' => 'AllenBoys',
-            'password' => 'Allen123',
-            'database' => 'AllenApp',
+            'username' => 'ftuser',
+            'password' => 'FT123',
+            'database' => 'FT',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
@@ -341,7 +341,7 @@ return [
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
 
-            'url' => "mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp",//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
+            'url' => "mysql://ftuser:FT123@apponice.com:3306/FT",//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
         /**
