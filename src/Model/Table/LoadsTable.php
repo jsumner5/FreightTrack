@@ -83,6 +83,34 @@ class LoadsTable extends Table
     public function validationDefault(Validator $validator)
     {
    
+        $validator
+        ->requirePresence('LoadNumber', 'create')
+        ->notEmpty('LoadNumber');
+
+    $validator
+        ->integer('MCNumber')
+        ->allowEmpty('MCNumber');
+
+    $validator
+        ->scalar('CompanyID')
+        ->requirePresence('CompanyID', 'create')
+        ->notEmpty('CompanyID');
+
+    $validator
+        ->scalar('Comments')
+        ->maxLength('Comments', 300)
+        ->allowEmpty('Comments');
+
+    $validator
+        ->scalar('Rate')
+        ->notEmpty('Rate');
+
+    $validator
+        ->scalar('Dispatcher')
+        ->notEmpty('Dispatcher');
+
+
+
 
  
 

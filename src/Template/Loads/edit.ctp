@@ -44,7 +44,7 @@
                         'options' => $driverOptions,
                         'defualt' => 'Select'
                     ]);
-                    echo $this->Form->control('Rate');
+                    echo $this->Form->input('Rate',['type'=>'number','message'=>'Enter numbers only.']);
                     echo $this->Form->control('PaymentMethod',[
                         'type'=>'Select',
                         'options'=> $paymentMethodOptions,
