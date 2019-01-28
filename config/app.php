@@ -341,7 +341,7 @@ return [
             //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
 
 
-            'url' => "mysql://ftuser:FT123@apponice.com:3306/FT",//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
+            'url' => "mysql://ftuser:FT123@apponice.com:3306/BDL",//env('DATABASE_URL', null),//'mysql://AllenBoys:Allen123@apponice.com:3306/AllenApp', //env('DATABASE_URL', null),
         ],
 
         /**
