@@ -61,7 +61,7 @@ class Load extends Entity
     protected $_accessible = [
         'Status' => true,
         'LoadNumber' => true,
-        'Driver' => true,
+        'DriverID' => true,
         'Rate' => true,
         'PaymentMethod' => true,
         'Dispatcher' => true,

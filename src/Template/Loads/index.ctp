@@ -10,13 +10,9 @@
         <li><?= $this->Html->link(__('Add Load'), ['action' => 'add']) ?></li>
         <li class="heading"><?= __('Reports') ?></li>
         <li><?= $this->Html->link(__('Last Day'), ['action' => 'report','lastDay']) ?></li>
-        <li><?= $this->Html->link(__('Last Week'), ['action' => 'report','lastWeek']) ?></li>
-        <li><?= $this->Html->link(__('Last Month'), ['action' => 'report','lastMonth']) ?></li>
+        <li><?= $this->Html->link(__('Last 7 days'), ['action' => 'report','lastWeek']) ?></li>
+        <li><?= $this->Html->link(__('Last 30 days'), ['action' => 'report','lastMonth']) ?></li>
         <li><?= $this->Html->link(__('Not Paid'), ['action' => 'report','notPaid']) ?></li>
-
-
-
-
 
     </ul>
 </nav>
@@ -35,7 +31,7 @@
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Status') ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Driver') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DriverID',['label'=>'Driver']) ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
@@ -49,7 +45,7 @@
                 <td class="mobile-font-small"><?= h($load->Companies['Name'])?></td>
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
-                <td class="mobile-hide"><?= h($load->Driver) ?></td>
+                <td class="mobile-hide"><?= h($load->Drivers['FirstName']) ?></td>
                 <td class="mobile-font-small"><?= '$'.h($load->Rate) ?></td>
                 <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>

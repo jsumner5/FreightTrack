@@ -29,8 +29,8 @@
             <td><?= h($load->LoadNumber) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Driver') ?></th>
-            <td><?= h($load->Driver) ?></td>
+            <th scope="row"><?= __('DriverID') ?></th>
+            <td><?= h($load->DriverID) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Rate') ?></th>

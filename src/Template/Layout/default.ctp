@@ -41,6 +41,14 @@ $cakeDescription = 'FreightTrac: Allen Transport';
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Drivers'?>">Drivers</a> </li>
             </ul>
+            <ul style='float:right; margin-top: .5em; margin-right: 3em;' >
+                <span style='color:white; font-size.9em;'>
+
+                    <?php if(isset($user) == true){ echo ($user['username']); } ?>
+                </span>
+                <?php  echo $this->Html->link('Logout',['controller' => 'users', 'action' => 'logout'],['class' => 'white']);?>
+
+            </ul>
         </div>
     </nav>
     <?= $this->Flash->render() ?>

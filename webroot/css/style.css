@@ -348,6 +348,9 @@ pre {
     text-transform: uppercase;
     padding: 0.4375rem 0.875rem;
 }
+.white{
+    color: white !important;
+}
 
 #actions-sidebar {
     background: #fafafa;

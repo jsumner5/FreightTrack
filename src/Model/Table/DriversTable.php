@@ -32,9 +32,8 @@ class DriversTable extends Table
         parent::initialize($config);
 
         $this->setTable('Drivers');
-        $this->setDisplayField('Name');
+        $this->setDisplayField('FirstName');
         $this->setPrimaryKey('DriverID');
-
         $this->addBehavior('Timestamp', [
             'events' => [
                 'Model.beforeSave' => [

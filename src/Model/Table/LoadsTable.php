@@ -35,6 +35,9 @@ class LoadsTable extends Table
         $this->setDisplayField('LoadNumber');
         $this->setPrimaryKey('LoadID');
         $this->belongsTo('Companies',['foreignKey'=>'CompanyID']);
+        $this->belongsTo('Drivers',['foreignKey'=> 'DriverID']);
+
+
        $this->addBehavior('Timestamp', [
         'events' => [
             'Model.beforeSave' => [

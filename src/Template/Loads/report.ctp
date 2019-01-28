@@ -25,7 +25,7 @@
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Status') ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Driver') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DriverID') ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
@@ -41,7 +41,7 @@
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
 
-                <td class="mobile-hide"><?= h($load->Driver) ?></td>
+                <td class="mobile-hide"><?= h($load->DriverID) ?></td>
                 <td class="mobile-font-small"><?= h($this->Number->currency($load->Rate, 'USD')) ?></td>
 
                 <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>

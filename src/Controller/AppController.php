@@ -48,31 +48,57 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
+        $this->loadComponent('Auth', [
+            'loginRedirect' => [
+                'controller' => 'Admin',
+                'action' => 'index'
+            ],
+            'logoutRedirect' => [
+                'controller' => 'Pages',
+                'action' => 'display'
+            ]
+        ]);
+
+
+
+
+
+       
+
+        // Allow the display action so our PagesController
+        // continues to work. Also enable the read only actions.
+       // $this->Auth->allow(['display', 'view', 'edit']);
+
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+
+        //debug();
+        if($this->Auth->User() != null){
+            $this->set('user', $this->Auth->user());
+        }
     }
+
+
 
     public function getTimeStamp(){
 
     // Get the current time.
     $time = Time::now();
-    echo($time);
     $time->timezone ='America/New_York';
-      //  debug(date('Y-m-d',strtotime($time)));
     return date('Y-m-d',strtotime($time));
     }
+
     public function getTimeStampString(){
 
         // Get the current time.
         $time = Time::now();
-        echo($time);
         $time->timezone ='America/New_York';
         $time = date('Y-m-d',strtotime($time));
         return date_format($time,'Y-m-d');
 
         }
-
+        
 }

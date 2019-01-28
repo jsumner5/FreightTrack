@@ -30,7 +30,8 @@
                  'label' => 'Load Status']);
 
             echo $this->Form->control('LoadNumber');
-            echo $this->Form->control('Driver',[
+            echo $this->Form->control('DriverID',[
+                'label'=>'Driver',
                 'type' => 'select',
                 'options' => $driverOptions,
                 'default' => 'Select'
