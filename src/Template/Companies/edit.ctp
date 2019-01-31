@@ -24,7 +24,7 @@
                     echo $this->Form->control('Name');
                     echo $this->Form->control('MCNumber');
                     echo $this->Form->control('Factorable', ['label' => 'Active']);
-                    echo $this->Form->control('Email', ['type'=>'email'], ['title'=>'email']);
+                    echo $this->Form->control('Email');
                     echo $this->Form->control('Phone');
                     echo $this->Form->input('Notes', ['type'=>'textarea']);
                     echo $this->Form->control('Address');
