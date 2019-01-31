@@ -37,16 +37,18 @@ $cakeDescription = 'FreightTrac: Allen Transport';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <div class="top-bar-section">
             <ul class="left">
+            <?php  echo $this->Html->link('Logout',['controller' => 'users', 'action' => 'logout'],['class' => ['white','mobile-center','hide']]);?>
+
                 <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Companies</a></li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Drivers'?>">Drivers</a> </li>
             </ul>
             <ul style='float:right; margin-top: .5em; margin-right: 3em;' >
-                <span style='color:white; font-size.9em;'>
+                <span style='color:white; font-size.9em;'class='mobile-hide'>
 
                     <?php if(isset($user) == true){ echo ($user['username']); } ?>
                 </span>
-                <?php  echo $this->Html->link('Logout',['controller' => 'users', 'action' => 'logout'],['class' => 'white']);?>
+                <?php  echo $this->Html->link('Logout',['controller' => 'users', 'action' => 'logout'],['class' => ['white','hide-mobile']]);?>
 
             </ul>
         </div>

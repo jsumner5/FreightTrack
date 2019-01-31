@@ -15,11 +15,11 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('FirstName') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('LastName') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('PhoneNumber') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('DateCreated') ?></th>
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('FirstName') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('LastName') ?></th>
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('PhoneNumber') ?></th>
+                <th scope="col" class="mobile-hide" ><?= $this->Paginator->sort('Email') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated') ?></th>
 
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -28,14 +28,14 @@
             <?php foreach ($drivers as $driver): ?>
             <tr>
                 <td><?= h($driver->FirstName) ?></td>
-                <td><?= h($driver->LastName) ?></td>
-                <td><?= h($driver->PhoneNumber) ?></td>
-                <td><?= h($driver->Email) ?></td>
-                <td><?= h($driver->DateCreated) ?></td>
-                <td class="actions">
+                <td class="mobile-hide"><?= h($driver->LastName) ?></td>
+                <td class="mobile-font-small"><?= h($driver->PhoneNumber) ?></td>
+                <td class="mobile-hide"><?= h($driver->Email) ?></td>
+                <td class="mobile-hide"><?= h($driver->DateCreated) ?></td>
+                <td class="actions" class="mobile-font-small">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $driver->DriverID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $driver->DriverID]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $driver->DriverID], ['confirm' => __('Are you sure you want to delete # {0}?', $driver->DriverID)]) ?>
+                     <!-- $this->Form->postLink(__('Delete'), ['action' => 'delete', $driver->DriverID], ['confirm' => __('Are you sure you want to delete # {0}?', $driver->DriverID)])  -->
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -49,6 +49,6 @@
             <?= $this->Paginator->next(__('next') . ' >') ?>
             <?= $this->Paginator->last(__('last') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p class='mobile-center-paginator'><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
 </div>

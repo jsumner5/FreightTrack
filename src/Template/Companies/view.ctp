@@ -24,7 +24,10 @@
             <th scope="row"><?= __('Factorable') ?></th>
             <td><?= h($company->Factorable) ?></td>
         </tr>
-
+        <tr>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= h($company->Email) ?></td>
+        </tr>
         <tr>
             <th scope="row"><?= __('Notes') ?></th>
             <td><?= h($company->Notes) ?></td>

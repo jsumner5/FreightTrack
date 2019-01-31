@@ -51,6 +51,7 @@ class Company extends Entity
         'LastModifiedBy' => true,
         'Loads' => true,
         'Phone' => true,
-        'CompanyID' => true
+        'CompanyID' => true,
+        'Email' => true
     ];
 }

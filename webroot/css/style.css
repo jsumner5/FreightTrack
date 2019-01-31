@@ -496,6 +496,9 @@ div.message.hidden {
     overflow: hidden;
     min-height: 92%; /* full height almost always */
 }
+.hide{
+    display: none;
+}
 
 /* Force equal height by overflowing */
 .content,
@@ -511,6 +514,19 @@ div.message.hidden {
     }
     .mobile-hide {
         display: none;
+    }
+    .mobile-show{
+        display: block !important;
+    }
+    .mobile-center{
+        display: block;
+        margin:auto;
+        text-align: center;
+    }
+    .mobile-center-paginator{
+        display: contents;
+        margin:auto;
+        text-align: center;
     }
     .mobile-font-small{
         font-size: .7em;
