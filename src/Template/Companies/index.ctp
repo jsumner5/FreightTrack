@@ -24,7 +24,7 @@
             <tr>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('MCNumber') ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Factor' ,['label' => 'Active' ]) ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Factorable' ,['label' => 'Active' ]) ?></th>
 
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated') ?></th>
                 <th scope="col" class="actions mobile-width-5 mobile-font-small"><?= __('Actions') ?></th>

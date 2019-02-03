@@ -32,9 +32,10 @@ class CompaniesController extends AppController
                 ],
                 ]];
         }
+
         //echo $this->Paginator->sort('user_id', null, ['direction' => 'asc', 'lock' => true]);
 
-        $companies = $this->paginate($this->Companies,[ 'sort' => 'Name', 'limit'=>35]);
+        $companies = $this->paginate($this->Companies,[ 'sort' => 'Factorable', 'limit'=>35, 'direction'=>'desc']);
 
         $this->set(compact('companies'));
 
