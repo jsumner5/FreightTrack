@@ -26,17 +26,18 @@
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('MCNumber') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Factorable' ,['label' => 'Active' ]) ?></th>
 
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated') ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Rate') ?></th>
+
                 <th scope="col" class="actions mobile-width-5 mobile-font-small"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($companies as $company): ?>
-            <tr>
+            <tr <?php if($company->Factorable == 'No'){echo ('class = "row-grey-force"');} ?>  > 
                 <td class="mobile-font-small"><?= h($company->Name) ?></td>
                 <td class="mobile-hide"><?= h($company->MCNumber) ?></td>
                 <td class="mobile-hide"><?= h($company->Factorable) ?></td>
-                <td class="mobile-hide"><?= h($company->DateCreated) ?></td>
+                <td class="mobile-hide"><?= h($company->Rate) ?></td>
                 <td class="actions mobile-font-small">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
                     <!-- move delete to the edit page -->

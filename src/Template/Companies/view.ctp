@@ -21,8 +21,12 @@
             <td><?= h($company->Name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Factorable') ?></th>
+            <th scope="row"><?= __('Factorable',['label'=>'Active']) ?></th>
             <td><?= h($company->Factorable) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Rate') ?></th>
+            <td><?= h($company->Rate) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Email') ?></th>

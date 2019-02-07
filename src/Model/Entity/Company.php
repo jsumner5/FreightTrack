@@ -52,6 +52,7 @@ class Company extends Entity
         'Loads' => true,
         'Phone' => true,
         'CompanyID' => true,
-        'Email' => true
+        'Email' => true,
+        'Rate' => true
     ];
 }

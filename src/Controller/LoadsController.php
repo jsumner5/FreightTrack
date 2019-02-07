@@ -28,7 +28,7 @@ class LoadsController extends AppController
             $this->paginate = ['conditions' => [
                 'OR' => [
                     'LoadNumber LIKE' => '%'.$keyword.'%',
-                    'Driver LIKE' => '%'.$keyword.'%' ,
+                    'Drivers.FirstName LIKE' => '%'.$keyword.'%' ,
                     'Dispatcher LIKE' => '%'.$keyword.'%' ,
                     'Rate LIKE' => '%'.$keyword.'%' ,
                     'Companies.Name LIKE' => '%'.$keyword.'%'

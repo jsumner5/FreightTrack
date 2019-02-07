@@ -71,6 +71,12 @@ class CompaniesTable extends Table
             ->requirePresence('Factorable', 'create')
             ->notEmpty('Factorable');
 
+            $validator
+            ->scalar('Rate')
+            ->maxLength('Rate', 4)
+            ->requirePresence('Rate', 'create')
+            ->notEmpty('Rate');
+
         $validator
             ->scalar('Notes')
             ->maxLength('Notes', 300)

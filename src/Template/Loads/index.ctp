@@ -41,7 +41,7 @@
         </thead>
         <tbody>
             <?php foreach ($loads as $load): ?>
-            <tr>
+            <tr class="row-grey">
                 <td class="mobile-font-small"><?= h($load->Companies['Name'])?></td>
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
