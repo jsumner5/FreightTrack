@@ -59,7 +59,7 @@
                <td class="mobile-hide"></td>
                <td class="mobile-hide"></td>
                 <td class="mobile-font-small" style='font-weight:bold;'> <?= $this->Number->currency($rateSum, 'USD'); ?> </td>
-                <?php echo ('<td style="font-weight:bold; mobile-font-small" colspan="3">Calculated Gross Rev: $'.$calculatedGross.'</td>');?>
+                <?php echo ('<td style="font-weight:bold;" class="mobile-font-small" colspan="3">Calculated Gross Rev: $'.$calculatedGross.'</td>');?>
 
                 <td class="actions mobile-hide mobile-font-small mobile-width-5"></td>
 
