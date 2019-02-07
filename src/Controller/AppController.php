@@ -54,8 +54,8 @@ class AppController extends Controller
                 'action' => 'index'
             ],
             'logoutRedirect' => [
-                'controller' => 'Pages',
-                'action' => 'display'
+                'controller' => 'Users',
+                'action' => 'login'
             ]
         ]);
         // Allow the display action so our PagesController
