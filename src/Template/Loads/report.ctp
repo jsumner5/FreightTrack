@@ -25,9 +25,7 @@
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Status') ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DriverID') ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
                 <th scope="col" class="actions mobile-font-small mobile-width-5"><?= __('Actions') ?></th>
@@ -41,10 +39,8 @@
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
 
-                <td class="mobile-hide"><?= h($load->DriverID) ?></td>
                 <td class="mobile-font-small"><?= h($this->Number->currency($load->Rate, 'USD')) ?></td>
 
-                <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
                 <td class="mobile-hide"><?= h($load->DateCreated) ?></td>
                 <td class="actions mobile-font-small mobile-width-5">
@@ -60,14 +56,12 @@
                <td class="mobile-font-small" style="font-weight:bold">Totals</td>
 
                <td class="mobile-hide"></td>
-               <td class=""></td>
+               <td class="mobile-hide"></td>
                <td class="mobile-hide"></td>
                 <td class="mobile-font-small" style='font-weight:bold;'> <?= $this->Number->currency($rateSum, 'USD'); ?> </td>
+                <?php echo ('<td style="font-weight:bold; mobile-font-small" colspan="3">Calculated Gross Rev: $'.$calculatedGross.'</td>');?>
 
-                <td class="mobile-hide"></td>
-                <td class="mobile-hide"></td>
-                <td class="mobile-hide"></td>
-                <td class="actions mobile-font-small mobile-width-5"></td>
+                <td class="actions mobile-hide mobile-font-small mobile-width-5"></td>
 
 
             </tr>

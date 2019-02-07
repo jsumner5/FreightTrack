@@ -153,10 +153,14 @@ class LoadsController extends AppController
 
         $this->set(compact('loads'));
         $rateSum = 0;
-        foreach($loads as $item){
-            $rateSum = $rateSum + $item->Rate;
+        $calculatedGross = 0;
+
+        foreach($loads as $load){
+            $rateSum = $rateSum + $load->Rate;
+            $calculatedGross = $calculatedGross + (($load['Companies']['Rate']/100) * $load->Rate);
         }
         $this->set(compact('rateSum', $rateSum));
+        $this->set(compact('calculatedGross', $calculatedGross));
 
     }
 
@@ -199,7 +203,7 @@ class LoadsController extends AppController
                         'Loads.Status !=' => 'Paid',
                     ]]];
                 break;
-                
+                         
         }
     }
 

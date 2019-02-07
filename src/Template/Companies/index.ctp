@@ -37,7 +37,7 @@
                 <td class="mobile-font-small"><?= h($company->Name) ?></td>
                 <td class="mobile-hide"><?= h($company->MCNumber) ?></td>
                 <td class="mobile-hide"><?= h($company->Factorable) ?></td>
-                <td class="mobile-hide"><?= h($company->Rate) ?></td>
+                <td class="mobile-hide"><?= h($this->Number->toPercentage($company->Rate))?></td>
                 <td class="actions mobile-font-small">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
                     <!-- move delete to the edit page -->

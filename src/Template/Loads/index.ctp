@@ -33,7 +33,6 @@
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DriverID',['label'=>'Driver']) ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('PaymentMethod', ['label' => 'Pay Method']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
                 <th scope="col" class="actions mobile-font-small mobile-width-5"><?= __('Actions') ?></th>
@@ -47,7 +46,6 @@
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
                 <td class="mobile-hide"><?= h($load->Drivers['FirstName']) ?></td>
                 <td class="mobile-font-small"><?= '$'.h($load->Rate) ?></td>
-                <td class="mobile-hide"><?= h($load->PaymentMethod)?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
                 <td class="mobile-hide"><?= h($load->DateCreated) ?></td>
                 <td class="actions mobile-font-small mobile-width-5">
