@@ -34,7 +34,7 @@
         <tbody>
             <?php foreach ($companies as $company): ?>
             <tr <?php if($company->Factorable == 'No'){echo ('class = "row-grey-force"');} ?>  > 
-                <td class="mobile-font-small"><?= h($company->Name) ?></td>
+                <td class="mobile-font-small font-size-8"><?= h($company->Name) ?></td>
                 <td class="mobile-hide"><?= h($company->MCNumber) ?></td>
                 <td class="mobile-hide"><?= h($company->Factorable) ?></td>
                 <td class="mobile-hide"><?= h($this->Number->toPercentage($company->Rate))?></td>

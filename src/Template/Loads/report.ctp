@@ -33,8 +33,8 @@
         </thead>
         <tbody>
             <?php foreach ($loads as $load): ?>
-            <tr>
-                <td class="mobile-font-small"><?= h($load->Companies['Name'])?></td>
+            <tr class="row-grey">
+                <td class="mobile-font-small font-size-8"><?= h($load->Companies['Name'])?></td>
 
                 <td class="mobile-hide"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>

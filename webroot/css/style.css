@@ -569,8 +569,17 @@ table td {
 
 /* custom table rules */
 .row-grey-force{
-    background-color: #eee !important;
+    background-color: #fafafa !important;
 }
 .row-grey{
-    background-color: #eee;
+    background-color: #fafafa;
+}
+.width-5{
+    width:5em;
+}
+.width-8{
+    width:8em;
+}
+.font-size-8{
+    font-size: .8em;
 }

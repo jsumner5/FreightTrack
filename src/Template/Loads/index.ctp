@@ -28,27 +28,25 @@
         <thead>
             <tr>
             <!-- need to sort these by date created  and also populate that on load creation and throw a search on there -->
-                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Status') ?></th>
-                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DriverID',['label'=>'Driver']) ?></th>
-                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
+                <th scope="col" class="mobile-font-small font-size-8"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
+                <th scope="col" class="mobile-hide width-8"><?= $this->Paginator->sort('Status') ?></th>
+                <th scope="col" class="mobile-font-small width-8"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
+                <th scope="col" class="mobile-font-small width-8"><?= $this->Paginator->sort('Rate') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Dispatcher') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('DateCreated', ['label'=> 'Created']) ?></th>
-                <th scope="col" class="actions mobile-font-small mobile-width-5"><?= __('Actions') ?></th>
+                <th scope="col" class="actions mobile-font-small mobile-width-5 width-5"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($loads as $load): ?>
             <tr class="row-grey">
-                <td class="mobile-font-small"><?= h($load->Companies['Name'])?></td>
-                <td class="mobile-hide"><?= h($load->Status) ?></td>
-                <td class="mobile-font-small"><?= h($load->LoadNumber) ?></td>
-                <td class="mobile-hide"><?= h($load->Drivers['FirstName']) ?></td>
-                <td class="mobile-font-small"><?= '$'.h($load->Rate) ?></td>
+                <td class="mobile-font-small font-size-8""><?= h($load->Companies['Name'])?></td>
+                <td class="mobile-hide width-8"><?= h($load->Status) ?></td>
+                <td class="mobile-font-small width-8"><?= h($load->LoadNumber) ?></td>
+                <td class="mobile-font-small width-8"><?= '$'.h($load->Rate) ?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
                 <td class="mobile-hide"><?= h($load->DateCreated) ?></td>
-                <td class="actions mobile-font-small mobile-width-5">
+                <td class="actions mobile-font-small mobile-width-5 width-5">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $load->LoadID]) ?>
                 </td>
             </tr>
