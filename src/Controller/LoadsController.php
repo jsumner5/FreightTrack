@@ -30,7 +30,7 @@ class LoadsController extends AppController
                     'LoadNumber LIKE' => '%'.$keyword.'%',
                     'Drivers.FirstName LIKE' => '%'.$keyword.'%' ,
                     'Dispatcher LIKE' => '%'.$keyword.'%' ,
-                    'Rate LIKE' => '%'.$keyword.'%' ,
+                    'Loads.Rate LIKE' => '%'.$keyword.'%' ,
                     'Companies.Name LIKE' => '%'.$keyword.'%'
                 ]
                 ]
