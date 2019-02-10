@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'FreightTrac: Allen Transport';
+$cakeDescription = 'Freight Trac';
 ?>
 <!DOCTYPE html>
 <html>
