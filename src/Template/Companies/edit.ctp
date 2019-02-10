@@ -13,7 +13,7 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $company->CompanyID)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Companies'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Clients'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
 <div class="companies form large-9 medium-8 columns content">

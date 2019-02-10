@@ -13,7 +13,7 @@
 <div class="companies form large-9 medium-8 columns content">
     <?= $this->Form->create($company) ?>
     <fieldset>
-        <legend><?= __('Add Company') ?></legend>
+        <legend><?= __('Add Client') ?></legend>
         <?php
             echo $this->Form->control('Name');
             echo $this->Form->control('MCNumber');

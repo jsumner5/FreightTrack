@@ -39,7 +39,7 @@ $cakeDescription = 'FreightTrac: Allen Transport';
             <ul class="left">
             <?php  echo $this->Html->link('Logout',['controller' => 'users', 'action' => 'logout'],['class' => ['white','mobile-center','hide']]);?>
 
-                <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Companies</a></li>
+                <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Clients</a></li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Drivers'?>">Drivers</a> </li>
             </ul>
