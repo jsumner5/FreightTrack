@@ -223,29 +223,25 @@ class LoadsController extends AppController
             'Dispatched' => 'Dispatched', 'Dropped' => 'Dropped',
             'Invoiced' => 'Invoiced'
         ];
-        // take this out soon 
-        //$driverOptions = [
-        //     'Derrick' => 'Derrick',
-        //     'Justin' => 'Justin',
-        //     'Grant' => 'Grant',
-        //     'Jan Austin' => 'Jan Austin',
-        //     'Patrick' => 'Patrick',
-        //     'Marquez' => 'Marquez',
-        //     'Independent Dispatched' => 'Independent Dispatch',
-        //     'Select' => 'Select'
-        // ];
 
         $companiesC = new CompaniesController();
         $driversC = new DriversController();
 
 
-        $this->set('companies', $companiesC->Companies->find('list',['fields'=>['Name','CompanyID'], 'order' => 'Name']));
+        $this->set('companies', $companiesC->Companies->find('list',
+        [
+            'fields'=>['Name','CompanyID'], 'order' => 'Name',
+            'conditions' => ['Companies.Factorable =' => 'Yes'],
+            'order'=> ['Companies.Name' => 'ASC']
+        
+        ]
+
+    
+    ));
         $this->set('driverOptions', $driversC->Drivers->find('list',['fields'=>['FirstName', 'DriverID']]));
         $this->set('paymentMethodOptions', $paymentMethodOptions);
-        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select'
-        ]);
+        $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select']);
         $this->set('statusOptions', $statusOptions);
-       // $this->set('driverOptions', $driverOptions);
     }
 
 }
