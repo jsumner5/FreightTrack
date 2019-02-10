@@ -419,7 +419,7 @@ fieldset legend {
 }
 
 button {
-    background: #C57B57;
+    background: #96ADC8;
 }
 
 div.message {
@@ -506,17 +506,24 @@ div.message.hidden {
     margin-bottom: -99999px;
     padding-bottom: 99999px;
 }
+
+/* mobile theme */
 @media(max-width: 640px) {
     #actions-sidebar {
         padding-bottom: 1rem;
         margin-bottom: 0;
-       /* display: none;*/
     }
     .mobile-hide {
         display: none;
     }
     .mobile-show{
         display: block !important;
+    }
+    .mobile-display{
+        display: block !important;
+    }
+    .mobile-font-bold{
+        font-weight: bold;
     }
     .mobile-center{
         display: block;
@@ -539,8 +546,15 @@ div.message.hidden {
     .mobile-width-5{
         width:5em !important;
     }
-}
+    .mobile-color-transparent{
+        color:transparent!important;
+    }
+    .mobile-color-black{
+        color: #222 !important;
 
+    }
+}
+/* custom rules */
 .content h3 {
     color: #96ADC8;
     padding-bottom: 0.5rem;
@@ -565,6 +579,9 @@ div.message.hidden {
 table td {
     vertical-align: top;
     word-break: break-all;
+}
+.color-transparent{
+    color:transparent ;
 }
 
 /* custom table rules */

@@ -30,7 +30,7 @@ class LoadsController extends AppController
                     'LoadNumber LIKE' => '%'.$keyword.'%',
                     'Drivers.FirstName LIKE' => '%'.$keyword.'%' ,
                     'Dispatcher LIKE' => '%'.$keyword.'%' ,
-                    'Rate LIKE' => '%'.$keyword.'%' ,
+                    'Load.Rate LIKE' => '%'.$keyword.'%' ,
                     'Companies.Name LIKE' => '%'.$keyword.'%'
                 ]
                 ]
@@ -43,8 +43,6 @@ class LoadsController extends AppController
             'order' => ['LoadID desc'],
             'limit' => 35
         ]
-
-            
             );
 
         $this->set(compact('loads'));

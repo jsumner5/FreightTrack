@@ -23,8 +23,8 @@
         <?php
                     echo $this->Form->control('Name');
                     echo $this->Form->control('MCNumber');
-                    echo $this->Form->control('Factorable', ['label' => 'Active','type'=>'select','options' => $factorOptions]);
-                    echo $this->Form->control('Rate');
+                    echo $this->Form->control('Factorable', ['type'=>'select','options' => $factorOptions]);
+
                     echo $this->Form->control('Email');
                     echo $this->Form->control('Phone');
                     echo $this->Form->input('Notes', ['type'=>'textarea']);

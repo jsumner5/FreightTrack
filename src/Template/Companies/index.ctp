@@ -24,9 +24,8 @@
             <tr>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Name') ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('MCNumber') ?></th>
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Factorable' ,['label' => 'Active' ]) ?></th>
+                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Factorable') ?></th>
 
-                <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Rate') ?></th>
 
                 <th scope="col" class="actions mobile-width-5 mobile-font-small"><?= __('Actions') ?></th>
             </tr>
@@ -37,7 +36,6 @@
                 <td class="mobile-font-small font-size-8"><?= h($company->Name) ?></td>
                 <td class="mobile-hide"><?= h($company->MCNumber) ?></td>
                 <td class="mobile-hide"><?= h($company->Factorable) ?></td>
-                <td class="mobile-hide"><?= h($this->Number->toPercentage($company->Rate))?></td>
                 <td class="actions mobile-font-small">
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $company->CompanyID]) ?>
                     <!-- move delete to the edit page -->
