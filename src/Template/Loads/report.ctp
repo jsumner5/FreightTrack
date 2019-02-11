@@ -22,7 +22,7 @@
         <thead>
             <tr>
             <!-- need to sort these by date created  and also populate that on load creation and throw a search on there -->
-                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Company Name']) ?></th>
+                <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('CompanyName', ['label'=>'Client Name']) ?></th>
                 <th scope="col" class="mobile-hide"><?= $this->Paginator->sort('Status') ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('LoadNumber',['label' => 'Load #']) ?></th>
                 <th scope="col" class="mobile-font-small"><?= $this->Paginator->sort('Rate') ?></th>
