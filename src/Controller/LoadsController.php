@@ -141,7 +141,8 @@ class LoadsController extends AppController
 
     public function report(string $report)
     {
-
+        $keyword = $this->request->query('keyword');
+        
         $this->paginate = $this->getReport($report);
 
         $loads = $this->paginate($this->Loads,[
@@ -150,6 +151,25 @@ class LoadsController extends AppController
             'limit' => 35
             ]
             );
+
+
+            if(! empty($keyword)){
+ 
+                $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
+     
+                $loads = $this->paginate($this->Loads,[
+                    'contain' => 'companies',
+                    'order' => ['LoadID desc'],
+                    'conditions' => [
+                        'OR' => [
+                            'LoadNumber LIKE' => '%'.$keyword.'%',
+                            'Dispatcher LIKE' => '%'.$keyword.'%' ,
+                            'Loads.Rate LIKE' => '%'.$keyword.'%' ,
+                            'Companies.Name LIKE' => '%'.$keyword.'%'
+                        ]
+                        ]]
+                );
+            }
 
         $this->set(compact('loads'));
         $rateSum = 0;

@@ -7,15 +7,15 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Load'), ['action' => 'add']) ?></li>   
     </ul>
 </nav>
 <div class="loads index large-9 medium-8 columns content">
     <h3 class="mobile-hide"><?= __('Loads ('.$reportName.')') ?></h3>
 
     <?php 
-    // echo $this->Form->create('',['type'=>'get']);
-    // echo $this->Form->control('keyword',['label' => 'Search loads']);
+    echo $this->Form->create('',['type'=>'get']);
+    echo $this->Form->control('keyword',['label' => 'Search loads']);
     ?>
 
     <table cellpadding="0" cellspacing="0">

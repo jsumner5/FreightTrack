@@ -40,7 +40,7 @@
         <tbody>
             <?php foreach ($loads as $load): ?>
             <tr class="row-grey">
-                <td class="mobile-font-small font-size-8""><?= h($load->Companies['Name'])?></td>
+                <td class="mobile-font-small font-size-8"><?= h($load->Companies['Name'])?></td>
                 <td class="mobile-hide width-8"><?= h($load->Status) ?></td>
                 <td class="mobile-font-small width-8"><?= h($load->LoadNumber) ?></td>
                 <td class="mobile-font-small width-8"><?= '$'.h($load->Rate) ?></td>
