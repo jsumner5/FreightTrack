@@ -169,11 +169,11 @@ class LoadsController extends AppController
 
         switch (strtolower($reportName)) {
 
-            case 'lastday':
-            $this->set('reportName', 'Last  Day');
+            case 'today':
+            $this->set('reportName', 'Today');
             return ['conditions' => [
                     'OR' => [
-                        'Loads.DateCreated >=' => $now->subDays(1),
+                        'Loads.DateCreated >=' => $now,
                     ]]];
                 break;
 

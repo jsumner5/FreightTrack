@@ -9,7 +9,7 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Add Load'), ['action' => 'add']) ?></li>
         <li class="heading"><?= __('Reports') ?></li>
-        <li><?= $this->Html->link(__('Last Day'), ['action' => 'report','lastDay']) ?></li>
+        <li><?= $this->Html->link(__('Today'), ['action' => 'report','Today'])?></li>
         <li><?= $this->Html->link(__('Last 7 days'), ['action' => 'report','lastWeek']) ?></li>
         <li><?= $this->Html->link(__('Last 30 days'), ['action' => 'report','lastMonth']) ?></li>
         <li><?= $this->Html->link(__('Not Paid'), ['action' => 'report','notPaid']) ?></li>
