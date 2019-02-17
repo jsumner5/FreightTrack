@@ -223,6 +223,15 @@ class LoadsController extends AppController
                         'Loads.Status !=' => 'Paid',
                     ]]];
                 break;
+
+                case 'payroll':
+            $this->set('reportName', 'Payroll');
+
+                return ['conditions' => [
+                    'OR' => [
+                        'Loads.Status !=' => 'Paid',
+                    ]]];
+                break;
                          
         }
     }

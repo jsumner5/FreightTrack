@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * Companies Controller
+ * Contacts Controller
  *
- * @property \App\Model\Table\CompaniesTable $Companies
+ * @property \App\Model\Table\ContactsTable $Contacts
  *
- * @method \App\Model\Entity\Company[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Contact[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class CompaniesController extends AppController
+class ContactsController extends AppController
 {
 
     /**
@@ -27,42 +27,42 @@ class CompaniesController extends AppController
             $this->paginate = ['conditions' => [
                 'OR' => [
                     'Name LIKE ' => '%'.$keyword.'%',
-                    'MCNumber Like' => '%'.$keyword.'%'
+                    'Details Like' => '%'.$keyword.'%'
                 ],
                 ]];
         }
 
         //echo $this->Paginator->sort('user_id', null, ['direction' => 'asc', 'lock' => true]);
 
-        $companies = $this->paginate($this->Companies,[ 'sort' => 'Factorable', 'limit'=>35, 'direction'=>'desc']);
+        $Contacts = $this->paginate($this->Contacts,[ 'sort' => 'ContactID', 'limit'=>35, 'direction'=>'desc']);
 
-        $this->set(compact('companies'));
+        $this->set(compact('Contacts'));
 
             
-          //  $companies = $this->paginate($this->request)
-            // if ($this->Companies->save($company)) {
-            //     $this->Flash->success(__('The company has been saved.'));
+          //  $Contacts = $this->paginate($this->request)
+            // if ($this->Contacts->save($Contact)) {
+            //     $this->Flash->success(__('The Contact has been saved.'));
 
             //     return $this->redirect(['action' => 'index']);
             // }
-            // $this->Flash->error(__('The company could not be saved. Please, try again.'));
+            // $this->Flash->error(__('The Contact could not be saved. Please, try again.'));
        // }
     }
 
     /**
      * View method
      *
-     * @param string|null $id Company id.
+     * @param string|null $id Contact id.
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $company = $this->Companies->get($id, [
+        $Contact = $this->Contacts->get($id, [
           //  'contain' => ['loads']
         ]);
-          //  debug($company);
-        $this->set('company', $company);
+          //  debug($Contact);
+        $this->set('Contact', $Contact);
     }
 
     /**
@@ -72,64 +72,62 @@ class CompaniesController extends AppController
      */
     public function add()
     {
-        $company = $this->Companies->newEntity();
+        $Contact = $this->Contacts->newEntity();
 
-        $company->DateCreated  = $this->getTimeStamp();
+        $Contact->DateCreated  = $this->getTimeStamp();
 
         if ($this->request->is('post')) {
             debug($this->request->data);
-            $company = $this->Companies->patchEntity($company, $this->request->getData());
-            if ($this->Companies->save($company)) {
-                $this->Flash->success(__('The company has been saved.'));
+            $Contact = $this->Contacts->patchEntity($Contact, $this->request->getData());
+            if ($this->Contacts->save($Contact)) {
+                $this->Flash->success(__('The Contact has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The company could not be saved. Please, try again.'));
+            $this->Flash->error(__('The Contact could not be saved. Please, try again.'));
         }
-        $this->set(compact('company'));
+        $this->set(compact('Contact'));
         $this->setFactorOptions();
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Company id.
+     * @param string|null $id Contact id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $company = $this->Companies->get($id, [
-            'contain' => ['loads']
-        ]);
+        $Contact = $this->Contacts->get($id,[]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $company = $this->Companies->patchEntity($company, $this->request->getData());
-            if ($this->Companies->save($company)) {
-                $this->Flash->success(__('The company has been saved.'));
+            $Contact = $this->Contacts->patchEntity($Contact, $this->request->getData());
+            if ($this->Contacts->save($Contact)) {
+                $this->Flash->success(__('The Contact has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The company could not be saved. Please, try again.'));
+            $this->Flash->error(__('The Contact could not be saved. Please, try again.'));
         }
-        $this->set(compact('company'));
+        $this->set(compact('Contact'));
         $this ->setFactorOptions();
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Company id.
+     * @param string|null $id Contact id.
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $company = $this->Companies->get($id);
-        if ($this->Companies->delete($company)) {
-            $this->Flash->success(__('The company has been deleted.'));
+        $Contact = $this->Contacts->get($id);
+        if ($this->Contacts->delete($Contact)) {
+            $this->Flash->success(__('The Contact has been deleted.'));
         } else {
-            $this->Flash->error(__('The company could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The Contact could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
