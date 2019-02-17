@@ -42,6 +42,8 @@ $cakeDescription = 'Freight Trac';
                 <li><a target="" href="<?php echo $this->request->webroot.'Companies'?>">Clients</a></li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Loads'?>">Loads</a> </li>
                 <li><a target="" href="<?php echo $this->request->webroot.'Drivers'?>">Drivers</a> </li>
+                <li><a target="" href="<?php echo $this->request->webroot.'Contats'?>">Contacts</a> </li>
+
             </ul>
             <ul style='float:right; margin-top: .5em; margin-right: 3em;' >
                 <span style='color:white; font-size.9em;'class='mobile-hide'>
