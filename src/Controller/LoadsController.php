@@ -101,7 +101,7 @@ class LoadsController extends AppController
      */
     public function edit($id = null)
     {
-        $this->setLoadDropdownOptions();
+        $this->setLoadDropdownOptions('edit');
 
         $load = $this->Loads->get($id, [
             'contain' => ['companies']
@@ -237,8 +237,8 @@ class LoadsController extends AppController
     }
 
 
-    public function setLoadDropdownOptions(){
-
+    public function setLoadDropdownOptions($mode = 'add'){
+        $mode = strtolower($mode);
         $paymentMethodOptions = [
             'Cash' => 'Cash',
             'Check' => 'Check',
@@ -256,17 +256,24 @@ class LoadsController extends AppController
         $companiesC = new CompaniesController();
         $driversC = new DriversController();
 
+        if($mode == 'add'){
+            $params = $companiesC->Companies->find('list',
+            [
+                'fields'=>['Name','CompanyID'], 'order' => 'Name',
+                'conditions' => ['Companies.Factorable =' => 'Yes'],
+                'order'=> ['Companies.Name' => 'ASC']
+            
+            ]);
+        }else{// default case
+            $params = $companiesC->Companies->find('list',
+            [
+                'fields'=>['Name','CompanyID'], 'order' => 'Name',
+                'order'=> ['Companies.Name' => 'ASC']           
+            ]);
+        } 
 
-        $this->set('companies', $companiesC->Companies->find('list',
-        [
-            'fields'=>['Name','CompanyID'], 'order' => 'Name',
-            'conditions' => ['Companies.Factorable =' => 'Yes'],
-            'order'=> ['Companies.Name' => 'ASC']
-        
-        ]
+        $this->set('companies', $params);
 
-    
-    ));
         $this->set('driverOptions', $driversC->Drivers->find('list',['fields'=>['FirstName', 'DriverID']]));
         $this->set('paymentMethodOptions', $paymentMethodOptions);
         $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select']);

@@ -89,7 +89,7 @@ class CompaniesTable extends Table
 
         $validator
             ->scalar('Phone')
-            ->maxLength('Phone', 11)
+            ->maxLength('Phone', 15)
             ->allowEmpty('Phone');
 
 
