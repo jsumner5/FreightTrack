@@ -255,7 +255,7 @@ class HtmlHelper extends Helper
             ];
 
             if ($type === 'icon' && $content === null) {
-                $types['icon']['link'] = 'favicon.ico';
+                $types['icon']['link'] = 'http://apponice.com/img/favicon.ico';
             }
 
             if (isset($types[$type])) {
