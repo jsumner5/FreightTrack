@@ -13,4 +13,19 @@
     </fieldset>
     <?= $this->Form->button(__('Login')); ?>
     <?= $this->Form->end() ?>
+    <?php
+
+echo $this->Html->image('http://apponice.com/img/logo2.png', ['alt' => 'CakePHP','class'=>'ft-logo']);
+
+
+?>
 </div>
+
+
+<style>
+.ft-logo{
+    width:25em;
+    margin:auto;
+    display:block;
+}
+</style>
