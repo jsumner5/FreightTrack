@@ -2,6 +2,7 @@
 namespace App\Controller;
 use Cake\I18n\Time;
 use App\Controller\AppController;
+use \DateTime;
 
 /**
  * Loads Controller
@@ -32,8 +33,7 @@ class LoadsController extends AppController
                     'Dispatcher LIKE' => '%'.$keyword.'%' ,
                     'Loads.Rate LIKE' => '%'.$keyword.'%' ,
                     'Companies.Name LIKE' => '%'.$keyword.'%'
-                ]
-                ]
+                ]]
                         ];
 
         }
@@ -43,10 +43,7 @@ class LoadsController extends AppController
             'order' => ['LoadID desc'],
             'limit' => 35
         ]
-
-            
             );
-
         $this->set(compact('loads'));
     }
 
@@ -148,7 +145,7 @@ class LoadsController extends AppController
         $loads = $this->paginate($this->Loads,[
             'contain' => 'companies',
             'order' => ['LoadID desc'],
-            'limit' => 35
+            'limit' => 100
             ]
             );
 
@@ -184,11 +181,10 @@ class LoadsController extends AppController
 
     }
 
-    public function getReport(string $reportName){
+    public function getReport(string $reportName,$param = null){
         $now = Time::now();
 
         switch (strtolower($reportName)) {
-
             case 'today':
             $this->set('reportName', 'Today');
             return ['conditions' => [
@@ -224,15 +220,15 @@ class LoadsController extends AppController
                     ]]];
                 break;
 
-                case 'payroll':
-            $this->set('reportName', 'Payroll');
+                case 'invoice':
+            $this->set('reportName', 'invoice');
 
-                return ['conditions' => [
+            return ['conditions' => [
                     'OR' => [
-                        'Loads.Status !=' => 'Paid',
-                    ]]];
-                break;
-                         
+                        'Loads.DateCreated >=' => DateTime::createFromFormat('Y-m-d', $param)
+                    ]
+                    ]];
+                break;          
         }
     }
 
@@ -278,6 +274,64 @@ class LoadsController extends AppController
         $this->set('paymentMethodOptions', $paymentMethodOptions);
         $this->set('dispatcherOptions', ['Devarus Lynch'=>'Devarus Lynch','Aaron Starkey' => 'Aaron Starkey', 'Jerold Sumner' => 'Jerold Sumner','Select' => 'Select']);
         $this->set('statusOptions', $statusOptions);
+    }
+
+
+    public function summary(string $report,$param = null)
+    {
+
+        if(isset($_GET["date"])){
+            $date = $_GET["date"];
+            if(trim($date) == ''){
+                $date = '2019-02-11';
+            }
+            $this->paginate = $this->getReport($report,$date);
+        }else{
+            $date = $param;
+            $this->paginate = $this->getReport($report,$param);
+
+        }
+        
+        $keyword = $this->request->query('keyword');
+        
+
+        $loads = $this->paginate($this->Loads,[
+            'contain' => 'companies',
+            'order' => ['Companies.Name'],
+            'limit' => 35,
+            ]
+            );
+
+
+        $this->set(compact('loads'));
+        $rateSum = 0;
+        $calculatedGross = 0;
+        $currentCompanyName = '';
+        $summaryMap = array();
+
+        foreach($loads as $load){
+
+            //create associative arr for totals
+            if($load->Companies['Name'] != $currentCompanyName){
+                $currentCompanyName = $load->Companies['Name'];
+                $summaryMap[$currentCompanyName] = $this->calculateRev($load);
+
+            }else{
+
+                $summaryMap[$currentCompanyName] += $this->calculateRev($load);
+
+              
+            }
+
+            $rateSum = $rateSum + $load->Rate;
+            $calculatedGross = $calculatedGross + $this->calculateRev($load);//+ (($load['Companies']['Rate']/100) * $load->Rate);
+        }
+
+        $this->set(compact('summaryMap', $summaryMap));
+        $this->set('date',$date);
+        $this->set(compact('rateSum', $rateSum));
+        $this->set(compact('calculatedGross', $calculatedGross));
+
     }
 
 }

@@ -81,6 +81,11 @@ class AppController extends Controller
             $this->set('user', $this->Auth->user());
         }
     }
+    // calulates the company gross rev based on the client rate
+    public function calculateRev($load){
+        $companyRate = $load->Companies['Rate'];
+        return $load->Rate * ($companyRate /100);
+    }
 
 
 

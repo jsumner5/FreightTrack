@@ -13,6 +13,7 @@
         <li><?= $this->Html->link(__('Last 7 days'), ['action' => 'report','lastWeek']) ?></li>
         <li><?= $this->Html->link(__('Last 30 days'), ['action' => 'report','lastMonth']) ?></li>
         <li><?= $this->Html->link(__('Not Paid'), ['action' => 'report','notPaid']) ?></li>
+        <li><?= $this->Html->link(__('Break Down'), ['action' => 'summary','invoice','2019-02-11' ]) ?></li>
 
     </ul>
 </nav>
@@ -41,7 +42,7 @@
             <?php foreach ($loads as $load): ?>
             <tr class="row-grey">
                 <td class="mobile-font-small font-size-8"><?= h($load->Companies['Name'])?></td>
-                <td class="mobile-hide width-8"><?= h($load->Status) ?></td>
+                <td class="mobile-hide width-8"><?= h($load->Status)?></td>
                 <td class="mobile-font-small width-8"><?= h($load->LoadNumber) ?></td>
                 <td class="mobile-font-small width-8"><?= '$'.h($load->Rate) ?></td>
                 <td class="mobile-hide"><?= h($load->Dispatcher) ?></td>
