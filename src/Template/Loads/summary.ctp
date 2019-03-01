@@ -15,9 +15,6 @@
         <input type="text" style="width:270px; display:block; margin:auto;float: right; height: 3em;"
         placeholder="date to start report" id="datepicker" name='date' value='<?= $date?>'>
    
-   
-
- 
 </form>
 
 
@@ -25,6 +22,7 @@
 <th scope="col" class="mobile-font-small font-size-8">Company</th>
 <th scope="col" class="mobile-font-small font-size-8">Pickup</th>
 <th scope="col" class="mobile-font-small font-size-8">Drop</th>
+<th scope="col" class="mobile-font-small font-size-8">Status</th>
 <th scope="col" class="mobile-font-small font-size-8">Rate Breakdown</th>
 
 <?php foreach ($loads as $key=>$load): ?>
@@ -44,6 +42,7 @@
 <td class="mobile-font-small font-size-8"><?= h($load->Companies['Name'])?></td>
 <td class="mobile-font-small font-size-8"><?= h($load->PickUpAddress)?></td>
 <td class="mobile-font-small font-size-8"><?= h($load->DeliveryAddress)?></td>
+<td class="mobile-font-small font-size-8"><?= h($load->Status)?></td>
 <td class="mobile-font-small font-size-8"><?= '( '.$load->Rate.' x '.$load->Companies['Rate'].'% ) = $' . $load->Rate * ($load->Companies['Rate'] /100) ?></td>
 </tr>
 
@@ -61,11 +60,7 @@ if($key == count($loads)-1){
     '; }
 
 ?>
-<?php endforeach; 
-
-
-
-?>
+<?php endforeach; ?>
 
 
 <script>
