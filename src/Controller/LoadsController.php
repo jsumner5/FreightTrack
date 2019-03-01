@@ -3,6 +3,8 @@ namespace App\Controller;
 use Cake\I18n\Time;
 use App\Controller\AppController;
 use \DateTime;
+use Cake\Mailer\Email;
+
 
 /**
  * Loads Controller
@@ -21,7 +23,15 @@ class LoadsController extends AppController
      */
     public function index()
     {
+        $email = new Email('default');
+        $email->from(['me@example.com' => 'My Site'])
+            ->to('jeroldsumner@gmail.com')
+            ->subject('About')
+            ->send('My message');
+
         $keyword = $this->request->query('keyword');
+        $date = date('Y-m-d', strtotime('-7 days'));
+        $this->set('date',$date);
         
         if(! empty($keyword)){
             $query = 'CompanyID in (SELECT CompanyID  from Companies where Name LIKE  %'.$keyword.'%)';
@@ -283,7 +293,8 @@ class LoadsController extends AppController
         if(isset($_GET["date"])){
             $date = $_GET["date"];
             if(trim($date) == ''){
-                $date = '2019-02-11';
+                //$date = '2019-02-11';
+                 $date = date('Y-m-d');
             }
             $this->paginate = $this->getReport($report,$date);
         }else{
